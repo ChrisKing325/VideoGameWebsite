@@ -14,7 +14,7 @@
 	<form method="get" action="searchResults.php">
 		Enter your search term here: 
 		<input type="text" id="searchterm" name="searchterm" size="40"/>
-		<input type="submit" value="goSearch" name="submit" /></
+		<input type="submit" value="Search" name="submit" /></
 	</form>
 
 
