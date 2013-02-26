@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<title>Search</title>
+	<title>Advanced Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -45,13 +45,13 @@
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>
+    	<div class="titleBlock">Advanced Search</div>
         <p>
         	<form method="get" action="searchResults.php">
 		Enter your search term here: 
 		<input type="text" id="searchterm" name="searchterm" size="40"/>
-		<input type="submit" value="Search" name="submit" />
-		<a href="advancedSearch.php"> Advanced Search</a>
+		<input type="submit" value="Search" name="submit" /><br/>
+		blah blah blah more search info goes here
 	</form>
 			</p>
     </div>

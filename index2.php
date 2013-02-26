@@ -30,7 +30,7 @@
         <!-- begin #navcontainer -->
         <div id="navcontainer">
             <ul id="navlist">
-                <li id="active"><a href="#" id="current">Home</a></li>
+                <li id="active"><a href="index2.php" id="current">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Member List</a></li>

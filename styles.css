@@ -75,7 +75,12 @@ a:hover {
 	margin-left:240px;
 	background:#FFFFFF;
 }
-.sidebar1 p, .sidebar2 p {
+.sidebar3 {
+	float:left;
+	width:800px;
+	background:#FFFFFF;
+}
+.sidebar1 p, .sidebar2 p , .sidebar3 form{
 	padding:10px;
 }
 .titleBlock {
