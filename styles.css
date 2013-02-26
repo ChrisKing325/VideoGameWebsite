@@ -13,6 +13,9 @@ h1 {
 	color:#f6a92f;
 	padding:0 10px 10px 10px;
 }
+.gamelist { 
+	padding:10px;
+}
 a {
 	color:#282828;
 	font-size:12px;
