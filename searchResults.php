@@ -12,9 +12,9 @@
 	<h1>Search Results</h1>
 	<?php
 		include "dbconnect.php";
-		if(isset($_GET[searchterm])){
-			$searchTerm = $_GET[searchterm];
-			$query = mysqli_real_escape_string("SELECT * FROM videogames WHERE name LIKE %$searchTerm% ORDER BY name;");
+		if(isset($_GET['searchterm'])){
+			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
+			$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
 			$result = mysqli_query($db, $query)
 				or die("Error Querying Database");
 		}
@@ -22,7 +22,7 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	echo '<a href="/showGame.php?id=' . $id . '">• ' . $game . '</a>';
+		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
 	    }
 		echo '</div>';
 		
