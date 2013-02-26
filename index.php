@@ -20,7 +20,7 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	echo '<a href="/showGame.php?id=' . $id . '">• ' . $game . '</a>';
+		  	echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
 	    }
 		echo '</div>';
 		
