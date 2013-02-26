@@ -1,0 +1,134 @@
+* {
+	margin:0;
+	padding:0;
+}
+body  {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background: #c37700 url(images/siteBackground.jpg) repeat-x left top;
+	color: #282828;
+}
+h1 {
+	font-size:18px;
+	color:#f6a92f;
+	padding:0 10px 10px 10px;
+}
+a {
+	color:#282828;
+	font-size:12px;
+	text-decoration:underline;
+}
+a:hover {
+	color:#282828;
+	font-size:12px;
+	text-decoration:none;
+}
+#header {
+	height:139px;
+}
+.logoContainer {
+	float:left;
+	padding:25px 0 0 0;
+}
+.logo {
+	color:#ffffff;
+	font-size:48px;
+	font-style:italic;
+}
+.logo span {
+	color:#f6a92f;
+}
+.author {
+	color:#868686;
+}
+.author a {
+	color:#f6a92f;
+}
+#container { 
+	width: 800px;  
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+}
+.headerPic {
+	width:800px;
+	height:324px;
+	color:#FFFFFF;
+	background:url(images/headerPic.jpg) no-repeat left top;
+	font-style:italic;
+	padding-bottom:10px;
+} 
+.headerPic h2 {
+	padding:40px 0 0 30px;
+	font-size:36px;
+}
+.headerPic span {
+	color:#eba331;
+}
+.sidebar1 {
+	float:left;
+	width:200px;
+	background:#FFFFFF;	
+}
+.sidebar2 {
+	margin-left:240px;
+	background:#FFFFFF;
+}
+.sidebar1 p, .sidebar2 p {
+	padding:10px;
+}
+.titleBlock {
+	background:url(images/titleBackground.jpg) repeat-x left top;
+	height:42px;
+	color:#ffffff;
+	padding:12px 10px 0 10px;
+	font-size:14px;
+	font-weight:bold;
+}
+#footer {
+	height:127px;
+	background:url(images/footerBackground.jpg) repeat-x left top;
+	color:#868686;
+	margin-top: 10px;
+} 
+#footer p {
+	text-align:center;
+	padding:40px 0 0 0;
+}
+#footer a {
+	color:#f6a92f;
+}
+.clearfloat { 
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+/*Main Menu*/
+#navlist {
+	margin: 0;
+	padding: 12px 0 20px 10px;
+	float:right;
+}
+#navlist ul, #navlist li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	list-style-type: none;
+}
+#navlist a:link, #navlist a:visited {
+	float: left;
+	font-style:italic;
+	margin: 0 10px 4px 10px;
+	text-decoration: none;
+	color: #ffffff;
+	font-size:24px;
+}
+#navlist a:link#current, #navlist a:visited#current, #navlist a:hover {
+	border-bottom: 3px solid #f6a92f;
+	padding-bottom: 2px;
+	background: transparent;
+	color: #f6a92f;
+}
+#navlist a:hover { 
+	color: #f6a92f; 
+	border-bottom: 3px solid #f6a92f;
+}
