@@ -80,8 +80,12 @@ a:hover {
 	width:800px;
 	background:#FFFFFF;
 }
-.sidebar1 p, .sidebar2 p , .sidebar3 form{
+.sidebar1 p, .sidebar2 p {
 	padding:10px;
+}
+.sidebar3 p{
+	float:left;
+	margin:10px;
 }
 .titleBlock {
 	background:url(images/titleBackground.jpg) repeat-x left top;
