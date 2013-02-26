@@ -24,6 +24,7 @@ CREATE TABLE reviews (
 	id int NOT NULL,
 	userID int,
 	userReview BLOB
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE users (
