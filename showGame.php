@@ -11,7 +11,7 @@
 	<?php
 		include "dbconnect.php";
 		$id = $_GET['id'];
-		$query = 'SELECT * FROM videogames WHERE id= $id';
+		$query = "SELECT * FROM videogames WHERE id= $id";
 		$result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 		
