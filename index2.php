@@ -43,13 +43,10 @@
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
     <div class="sidebar1">
-    	<div class="titleBlock">About us</div>
-        <h1>Your Flash Site will be look professional!</h1>
+    	<div class="titleBlock">I am a title!</div>
+        <h1>What do you guys think should go here?</h1>
         <p>
-        An extensive number of unique Flash Templates is at your service. All templates on our site were created specially for you! Our independent designers created flash professional templates. Also our templates are unique. It means you can use our flash templates to create your own site!  
-        </p>
-        <p>
-        	Our studio offers a big choice of free flash templates categories for your business and personal needs. By using our unique products, you can create an excellent animated website and spend minimum time and money on it. Most of our templates are compatible with Flash MX2004, Flash 8, Flash CS3, and Flash CS4. You don’t have to be a professional flash developer to create a website.
+        Do you guys think that we should put anything here? Should we just have one bar like on the search page? Or should we utilize this space? Maybe we could put the list of games here, and put the most recent reviews in the larger section.
         </p>
     </div>
     <div class="sidebar2">
