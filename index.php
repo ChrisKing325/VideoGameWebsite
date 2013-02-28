@@ -42,14 +42,8 @@
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
+    
     <div class="sidebar1">
-    	<div class="titleBlock">I am a title!</div>
-        <h1>What do you guys think should go here?</h1>
-        <p>
-        Do you guys think that we should put anything here? Should we just have one bar like on the search page? Or should we utilize this space? Maybe we could put the list of games here, and put the most recent reviews in the larger section.
-        </p>
-    </div>
-    <div class="sidebar2">
     	<div class="titleBlock">Welcome to us</div>
         <h1>All website template is released under a Creative Commons Avttribution 2.5 License</h1>
         <p>
@@ -69,6 +63,14 @@
 		
 	?>
 			</p>
+    </div>
+	
+	<div class="sidebar2">
+    	<div class="titleBlock">I am a title!</div>
+        <h1>What do you guys think should go here?</h1>
+        <p>
+        Do you guys think that we should put anything here? Should we just have one bar like on the search page? Or should we utilize this space? Maybe we could put the list of games here, and put the most recent reviews in the larger section.
+        </p>
     </div>
     <br class="clearfloat" />
 </div>
