@@ -32,6 +32,7 @@ CREATE TABLE users (
 	userName VARCHAR(25) NOT NULL,
 	password VARCHAR(20) NOT NULL,
 	name VARCHAR(20) NOT NULL,
-	favConsole VARCHAR(
+	favConsole VARCHAR(25) NOT NULL
+	PRIMARY KEY (id)
 );
 	
