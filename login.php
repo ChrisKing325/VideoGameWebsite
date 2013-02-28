@@ -40,48 +40,55 @@
         <!-- end #navcontainer -->
     </div>
     <!-- end #header -->
-    <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
-    <div class="sidebar1">
-    	<div class="titleBlock">About us</div>
-        <h1>Your Flash Site will be look professional!</h1>
-        <p>
-        An extensive number of unique Flash Templates is at your service. All templates on our site were created specially for you! Our independent designers created flash professional templates. Also our templates are unique. It means you can use our flash templates to create your own site!  
-        </p>
-        <p>
-        	Our studio offers a big choice of free flash templates categories for your business and personal needs. By using our unique products, you can create an excellent animated website and spend minimum time and money on it. Most of our templates are compatible with Flash MX2004, Flash 8, Flash CS3, and Flash CS4. You don’t have to be a professional flash developer to create a website.
-        </p>
-    </div>
-    <div class="sidebar2">
-    	<div class="titleBlock">Welcome to us</div>
-        <h1>All website template is released under a Creative Commons Avttribution 2.5 License</h1>
-        <p>
-        	We request you retain the full copyright notice below including the link to <a href="http://www.FreeWebsite-Template.com">www.FreeWebsite-Template.com</a>. This not only gives respect to the large amount of time given freely by the developers but also helps build interest, traffic and use of our free and paid designs. If you cannot (for good reason) retain the full copyright we request you at least leave in place the Website Templates line, with Website Templates linked to <a href="http://www.FreeWebsite-Template.com">www.FreeWebsite-Template.com</a>. If you refuse to include even this then support may be affected.
+   <head>
+      
+	  <?php
+  	   include "dbconnect.php";
+  	   if (isset($_POST['userName'])){
+  	     $name = $_POST['userName'];
+         $pw = sha1($_POST['pw']);
 
-You are allowed to use this design only if you agree to the following conditions:
-- You can not remove copyright notice from any our template without our permission.
-- If you modify any our template it still should contain copyright because it is based on our work.
-- You may copy, distribute, modify, etc. any our template as long as link to our website remains untouched.
+         $query = "select * from users WHERE userName = '$name' AND password = '$pw'";
+         $result = mysqli_query($db, $query)
+         or die("Error Querying Database");
+         if ($row = mysqli_fetch_array($result))
+         {
+   		#echo $query;
+   		echo '<META http-equiv="refresh" content="0;URL=index.php">';
+       }}
+?>
+      
+      <div id="content">
+        <!-- insert the page content here -->
+    
+        <?php
+        if (isset($_POST['username'])) {
+        echo "<h2>Incorrect Username/Password</h2>";
+        }
+        ?>
+        <div class="sidebar2">
+			<div class="titleBlock">Let's Begin Reviewing</div>
+			<h1>Thank you for coming to VideoGameWebsite</h1>
+			<p>
+        	For our returning members:
+			<br /><br />
+			Thank you for returning to our website. We appreciate your loyalty to our video game review website over other sites. Please login and read or write some reviews
+			<br /><br />
+			For our first time members:
+			<br /><br />
+			WELCOME TO VIDEOGAMEWEBSITE! Here we try and provide a simple way of reading reviews and writing reviews for videogames. Please join us in the quest to make picking video games as easy as possible.
+			</p>
+		</div>
+        <h1>Login</h1>
+          <form method="post" action="login.php">
+    <p>
+    <label for="userName">Username:</label>
+    <input type="text" id="userName" name="userName" size="40" </p>
+    <p>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="pw" size="40" /></p>
 
-For support please visit <a href="http://FreeWebsite-Template.com/contact.php">http://FreeWebsite-Template.com/contact.php</a>
-        </p>
-        <br /><br />
-        <p>
-        	Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy<br /><br />
-            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-        </p>
-    </div>
-    <br class="clearfloat" />
-</div>
-<!-- end #container -->
-<!-- begin #footer -->
-    <div id="footer">
-        <p>
-        Terms of Use |
-        <a title="This page validates as XHTML 1.0 Strict" href="http://validator.w3.org/check/referer" class="footerLink"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | 
-        <a title="This page validates as CSS" href="http://jigsaw.w3.org/css-validator/check/referer" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br />
-        Copyright &copy; Games Club. Designed by <a href="http://www.freewebsite-template.com" title="Free Website Templates">Free Website Templates</a>
-        </p>
-    </div>
-<!-- end #footer -->
-</body>
+    <p><input type="submit" value="login" name="submit" /></p>
+  </form>
+  
 </html>
