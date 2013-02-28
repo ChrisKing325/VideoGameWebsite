@@ -1,13 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 
 <body>
 <?php
-include ('dbconnect.php');
-$query = "INSERT INTO `gamereviews`.`videogames` (`id`, `gamename`, `ESRBrating`, `genre`, `releasedate`, `score`, `replayability`, `AdminReview`, `picturelink`) 
-	VALUES (NULL, 'Halo 4', 'Mature', 'Shooter', '2012-11-06', '8', 'Medium-High', NULL, 'http://fc00.deviantart.net/fs70/i/2012/057/8/e/10_of_117__halo_4_ost_cover_by_adinosupremacist-d4r44la.png');"
+include "dbconnect.php";
+$query = "INSERT INTO videogames (id, gamename, ESRBrating, genre, releasedate, score, replayability, AdminReview, picturelink) 
+	VALUES (NULL, 'Halo 4', 'Mature', 'Shooter', '2012-11-06', '8', 'Medium-High', NULL, 'http://fc00.deviantart.net/fs70/i/2012/057/8/e/10_of_117__halo_4_ost_cover_by_adinosupremacist-d4r44la.png')";
 	
 mysqli_query($db, $query)
    			or die("Error Querying Database");
