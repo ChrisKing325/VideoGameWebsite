@@ -8,7 +8,7 @@
 <body>
 <?php
 include ('dbconnect.php');
-$query = "INSERT INTO systems (id, system) VALUES (2,'xbox 360')";
+$query = "INSERT INTO systems (id, system) VALUES (1,'xbox 360')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 echo "Finished adding system 1!";
