@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<title>Search Results</title>
+	<title>Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -45,31 +45,14 @@
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search Results</div>
+    	<div class="titleBlock">Add a Game</div>
         <p>
-        	
-			<?php
-		include "dbconnect.php";
-		if(isset($_GET['searchterm'])){
-			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
-			$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
-			$result = mysqli_query($db, $query)
-				or die("Error Querying Database");
-		}
-		echo '<div id="gamelist">';
-		while($row = mysqli_fetch_array($result)) {
-  			$game = $row['gamename'];
-  			$id = $row['id'];
-		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
-	    }
-		echo '</div>';
-		
-	?>
-		<div>
-			Don't see the game you're looking for? 
-			<a href="addGame.php">Create a page for it!</a>
-			
-			
+        	<form method="get" action="searchResults.php">
+		Enter your search term here: 
+		<input type="text" id="searchterm" name="searchterm" size="40"/>
+		<input type="submit" value="Search" name="submit" />
+		<a href="advancedSearch.php"> Advanced Search</a>
+	</form>
 			</p>
     </div>
     <br class="clearfloat" />
@@ -85,6 +68,8 @@
         </p>
     </div>
 <!-- end #footer -->
+
+
 	
 
 
