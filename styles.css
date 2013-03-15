@@ -83,9 +83,12 @@ a:hover {
 .sidebar1 p, .sidebar2 p {
 	padding:10px;
 }
-.sidebar3 p{
+.sidebar3 p, .sidebar3 form{
 	float:left;
 	margin:10px;
+}
+.errorMessage{
+	color:#ff0000;
 }
 .titleBlock {
 	background:url(images/titleBackground.jpg) repeat-x left top;

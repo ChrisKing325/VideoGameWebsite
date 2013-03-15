@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<title>Search</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
+    type="text/javascript"></script>
+	<script src="createGame.js"></script>
+	<title>Add a Game</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -37,7 +40,7 @@
                 <li><a href="#">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
-				<li id="active"><a href="search.php" id="current">Search</a></li>
+				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
@@ -47,11 +50,57 @@
     <div class="sidebar3">
     	<div class="titleBlock">Add a Game</div>
         <p>
-        	<form method="get" action="searchResults.php">
-		Enter your search term here: 
-		<input type="text" id="searchterm" name="searchterm" size="40"/>
-		<input type="submit" value="Search" name="submit" />
-		<a href="advancedSearch.php"> Advanced Search</a>
+		<div class="errorMessage"></div>
+        	<form>
+		Name of game: <input type="text" id="name" size="40"/><br/>
+		ESRB Rating: 
+			<select id="esrb">
+				<option value="none">Select...</option>
+				<option value="ec">EC - Early Childhood</option>
+				<option value="e">E - Everyone</option>
+				<option value="e10">E10 - Everyone 10+</option>
+				<option value="t">T - Teen</option>
+				<option value="m">M - Mature</option>
+				<option value="a">A - Adults Only</option>
+				<option value="rp">RP - Rating Pending</option>
+			</select><br/>
+		Genre: <input type="text" id="genre" size="40"/><br/>
+		Release Date:
+			<select id="month">
+				<option value="m">Month</option>
+				<option value="1">January</option>
+				<option value="2">February</option>
+				<option value="3">March</option>
+				<option value="4">April</option>
+				<option value="5">May</option>
+				<option value="6">June</option>
+				<option value="7">July</option>
+				<option value="8">August</option>
+				<option value="9">September</option>
+				<option value="10">October</option>
+				<option value="11">November</option>
+				<option value="12">December</option>
+				<option value="uk">Unknown</option>
+			</select>
+			<select id="day">
+				<option value="d">Day</option>
+				<?php
+					for($i=1; $i<32; $i++){
+						echo "<option value=\"$i\">$i</option>";
+					}
+				?>
+				<option value="uk">Unknown</option>
+			</select>
+			<select id="year">
+				<option value="y">Year</option>
+				<?php
+					for($i=2050; $i>1949; $i--){
+						echo "<option value=\"$i\">$i</option>";
+					}
+				?>
+			</select><br/>
+			Link to a Picture: <input type="text" id="piclink" size="40"/><br/>
+		<button id="create">Add Game!</button>
 	</form>
 			</p>
     </div>
