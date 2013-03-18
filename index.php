@@ -32,7 +32,7 @@
             <ul id="navlist">
                 <li id="active"><a href="index.php" id="current">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li><a href="review.php">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>

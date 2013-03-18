@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<title>Search</title>
+	<title>Review</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -34,10 +34,10 @@
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li id="active"><a href="review.php" id="current">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
-				<li id="active"><a href="search.php" id="current">Search</a></li>
+				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
@@ -45,17 +45,19 @@
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>        
-			<p>        	
-				<form method="get" action="searchResults.php">		
-				Enter your search term here: 		
-				<input type="text" id="searchterm" name="searchterm" size="40"/>		
-				<input type="submit" value="Search" name="submit" />		
-				<a href="advancedSearch.php"> Advanced Search</a>	
-				</form>			
-			</p>    
-		</div>    
-	<br class="clearfloat" />
+    	<div class="titleBlock">Review</div>
+		<p>
+		
+        	<form method="get" action="showGame.php">
+			Enter your review of the above game here: <br />
+			<input type="text" id="reviewtext" name="reviewtext" size="40"/>		
+			
+			<input type="submit" value="Review" name="submit" />
+		
+			</form>
+		</p>
+    </div>
+    <br class="clearfloat" />
 </div>
 <!-- end #container -->
 <!-- begin #footer -->

@@ -10,7 +10,7 @@ CREATE TABLE videogames (
   releasedate DATE,
   score int,
   replayability VARCHAR(25),
-  AdminReview BLOB,
+  AdminReview VARCHAR(255),
   picturelink VARCHAR(255),
   PRIMARY KEY (id)
 );
@@ -23,7 +23,7 @@ CREATE TABLE systems (
 CREATE TABLE reviews (
 	id int NOT NULL,
 	userID int,
-	userReview BLOB,
+	userReview VARCHAR(255),
 	PRIMARY KEY(id)
 );
 
