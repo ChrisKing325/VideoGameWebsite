@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS gamereviews;
-GRANT ALL PRIVILEGES ON gamereviews.* to 'videogameuser'@'localhost' identified by 'videogameuser';
+GRANT ALL PRIVILEGES ON gamereviews.* to 'videogameuser'@'localhost' identified by 'videogamepassword';
 USE gamereviews;
 
 CREATE TABLE videogames (
