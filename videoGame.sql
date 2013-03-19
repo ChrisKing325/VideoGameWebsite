@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS gamereviews;
-GRANT ALL PRIVILEGES ON gamereviews.* to 'videogameuser'@'localhost' identified by 'videogameuser';
+GRANT ALL PRIVILEGES ON gamereviews.* to 'videogameuser'@'localhost' identified by 'videogamepassword';
 USE gamereviews;
 
 CREATE TABLE videogames (
@@ -10,7 +10,7 @@ CREATE TABLE videogames (
   releasedate DATE,
   score int,
   replayability VARCHAR(25),
-  AdminReview VARCHAR(255),
+  AdminReview BLOB,
   picturelink VARCHAR(255),
   PRIMARY KEY (id)
 );
@@ -23,7 +23,7 @@ CREATE TABLE systems (
 CREATE TABLE reviews (
 	id int NOT NULL,
 	userID int,
-	userReview VARCHAR(255),
+	userReview BLOB,
 	PRIMARY KEY(id)
 );
 
