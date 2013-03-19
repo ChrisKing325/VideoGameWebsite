@@ -53,7 +53,7 @@
         <!-- end #navcontainer -->
     </div>
     <!-- end #header -->
-    <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
+    <div class="headerPic"><h2></h2></div>
     <div class="sidebar1">
     	<div class="titleBlock">Game Info</div>
         <p>

@@ -6,7 +6,7 @@
     <div id="header">
       <div id="logo">
         <div id="logo_text">
-          <h1>Harlem Cake<span class="alternate_colour"> Fails</span></h1>
+          <h1>Create an<span class="alternate_colour"> Account</span></h1>
         </div>
       </div>
       <div id="menubar">

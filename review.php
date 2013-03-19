@@ -46,7 +46,7 @@ $_SESSION ['userID']=1 ?>
         <!-- end #navcontainer -->
     </div>
     <!-- end #header -->
-    <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
+    <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
     	<div class="titleBlock">Review</div>
 		<p>
