@@ -52,7 +52,7 @@
 		include "dbconnect.php";
 		if(isset($_GET['searchterm'])){
 			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
-			$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
+			$query = "SELECT * FROM videogames INNER JOIN systems ON videogames.id = systems.id WHERE gamename LIKE '%$searchTerm%'";
 			$result = mysqli_query($db, $query)
 				or die("Error Querying Database");
 		}
@@ -60,7 +60,8 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
+			$system = $row['system'];
+		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>' . '&nbsp: &nbsp' . $system;
 	    }
 		echo '</div>';
 		
