@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
 <?php session_start(); ?>
  
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -55,7 +56,7 @@
 			if(isset($_GET['review'])){
 				$reviewText = mysqli_real_escape_string($db, $_GET['review']);
 				$query = "INSERT INTO gamereviews.reviews (userReviews) 
-					VALUES ('$reviewText') WHERE userID = " . $_SESSION . ";";
+					VALUES ('$reviewText') WHERE userID = " . $_SESSION['userID'] . ";";
 				
 				$result = mysqli_query($db, $query)
 					or die("Error Putting into Database");
