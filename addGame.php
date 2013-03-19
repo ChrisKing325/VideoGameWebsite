@@ -79,7 +79,6 @@
 				<option value="10">October</option>
 				<option value="11">November</option>
 				<option value="12">December</option>
-				<option value="uk">Unknown</option>
 			</select>
 			<select id="day" name="day">
 				<option value="d">Day</option>
@@ -88,7 +87,6 @@
 						echo "<option value=\"$i\">$i</option>\n";
 					}
 				?>
-				<option value="uk">Unknown</option>
 			</select>
 			<select id="year" name="year">
 				<option value="y">Year</option>
