@@ -52,7 +52,7 @@
         <p>
       <?php
 		include "dbconnect.php";
-		$query = 'SELECT * FROM videogames';
+		$query = 'SELECT * FROM videogames ORDER BY gamename';
 		$result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 		
