@@ -34,7 +34,7 @@
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li id="active"><a href="search.php" id="current">Search</a></li>

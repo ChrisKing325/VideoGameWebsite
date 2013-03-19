@@ -57,7 +57,7 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	if($row['score'] >= 8) {
+		  	if($row['score'] >= 9) {
 		  		echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
 	    	}
 	    }
