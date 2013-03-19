@@ -46,7 +46,7 @@
         <!-- end #navcontainer -->
     </div>
     <!-- end #header -->
-    <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
+    <div class="headerPic"><h2></h2></div>
     <div id="sidebar3" class="sidebar3">
     	<div class="titleBlock">Add a Game</div>
         <p>
