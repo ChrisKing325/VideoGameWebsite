@@ -34,7 +34,7 @@
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li><a href="review.php">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li id="active"><a href="search.php" id="current">Search</a></li>
@@ -48,23 +48,23 @@
     	<div class="titleBlock">Search Results</div>
         <p>
         	
-			<?php
-		include "dbconnect.php";
-		if(isset($_GET['searchterm'])){
-			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
-			$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
-			$result = mysqli_query($db, $query)
-				or die("Error Querying Database");
-		}
-		echo '<div id="gamelist">';
-		while($row = mysqli_fetch_array($result)) {
-  			$game = $row['gamename'];
-  			$id = $row['id'];
-		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
-	    }
-		echo '</div>';
+		<?php
+			include "dbconnect.php";
+			if(isset($_GET['searchterm'])){
+				$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
+				$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
+				$result = mysqli_query($db, $query)
+					or die("Error Querying Database");
+			}
+			echo '<div id="gamelist">';
+			while($row = mysqli_fetch_array($result)) {
+				$game = $row['gamename'];
+				$id = $row['id'];
+				echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
+			}
+			echo '</div>';
 		
-	?>
+		?>
 		<div>
 			Don't see the game you're looking for? 
 			<a href="addGame.php">Create a page for it!</a>
