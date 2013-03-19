@@ -44,7 +44,7 @@
     <div class="headerPic"><h2></h2></div>
     
     <div class="sidebar1">
-    	<div class="titleBlock">Welcome to us</div>
+    	<div class="titleBlock">Highest Rated Games</div>
         <h1>All website template is released under a Creative Commons Avttribution 2.5 License</h1>
         <p>
         	<?php
@@ -57,7 +57,9 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
+		  	if($row =['score'] >= 9) {
+		  		echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
+	    	}
 	    }
 		echo '</div>';
 		
@@ -66,10 +68,10 @@
     </div>
 	
 	<div class="sidebar2">
-    	<div class="titleBlock">I am a title!</div>
-        <h1>What do you guys think should go here?</h1>
+    	<div class="titleBlock">Welcome to Video Game Reviews!</div>
+        <h1>Tired of the press reviewing games and inflating scores? No more my friend. At Video Game Reviews, you make the review and share it with the community. Let your voice be heard.</h1>
         <p>
-        Do you guys think that we should put anything here? Should we just have one bar like on the search page? Or should we utilize this space? Maybe we could put the list of games here, and put the most recent reviews in the larger section.
+        Here at Video Game Reviews you can look up reviews for virtually every game in existence! Share your opinion on them with our patented "Quick-Review" system. Voice your opinion in 255 characters or less. 
         </p>
     </div>
     <br class="clearfloat" />
