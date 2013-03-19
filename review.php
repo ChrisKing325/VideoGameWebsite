@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?php session_start();
+$_SESSION ['userID']=1 ?>
+ 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
@@ -47,12 +50,10 @@
     <div class="sidebar3">
     	<div class="titleBlock">Review</div>
 		<p>
-		
-        	<form method="get" action="showGame.php">
-			Enter your review of the above game here: <br />
-			<input type="text" id="reviewtext" name="reviewtext" size="40"/>		
-			
-			<input type="submit" value="Review" name="submit" />
+		    <form method="get" action="insertReview.php">
+			Enter your review of the game here: 
+			<input type="text" name="review" size="40"  />	<br />	
+			<input type="submit" value="Review" />
 		
 			</form>
 		</p>
