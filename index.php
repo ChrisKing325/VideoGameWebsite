@@ -45,7 +45,7 @@
     
     <div class="sidebar1">
     	<div class="titleBlock">Highest Rated Games</div>
-        <h1>All website template is released under a Creative Commons Avttribution 2.5 License</h1>
+        <h1>(Games that receive an average of 8 or higher for their score will show up here)</h1>
         <p>
         	<?php
 		include "dbconnect.php";
@@ -57,7 +57,7 @@
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
-		  	if($row =['score'] >= 9) {
+		  	if($row['score'] >= 8) {
 		  		echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
 	    	}
 	    }
