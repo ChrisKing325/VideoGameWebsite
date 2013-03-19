@@ -2,10 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
-    type="text/javascript"></script>
-	<script src="createGame.js"></script>
-	<title>Add a Game</title>
+	<title>Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -37,7 +34,7 @@
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li id="active"><a href="review.php" id="current">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
@@ -47,63 +44,47 @@
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2>Online <span>GAMES</span> portal</h2></div>
-    <div id="sidebar3" class="sidebar3">
-    	<div class="titleBlock">Add a Game</div>
-        <p>
-		<div id="error" class="errorMessage"></div>
-        	<form method="post" action="createGame.php">
-		Name of game: <input type="text" id="name" name="name" size="40"/><br/>
-		ESRB Rating: 
-			<select id="esrb" name="esrb">
-				<option value="none">Select...</option>
-				<option value="Early Childhood">EC - Early Childhood</option>
-				<option value="Everyone 10+">E10 - Everyone 10+</option>
-				<option value="Teen">T - Teen</option>
-				<option value="Mature">M - Mature</option>
-				<option value="Adults Only">A - Adults Only</option>
-				<option value="Rating Pending">RP - Rating Pending</option>
-			</select><br/>
-		Genre: <input type="text" id="genre" name="genre" size="40"/><br/>
-		Release Date:
-			<select id="month" name="month">
-				<option value="m">Month</option>
-				<option value="1">January</option>
-				<option value="2">February</option>
-				<option value="3">March</option>
-				<option value="4">April</option>
-				<option value="5">May</option>
-				<option value="6">June</option>
-				<option value="7">July</option>
-				<option value="8">August</option>
-				<option value="9">September</option>
-				<option value="10">October</option>
-				<option value="11">November</option>
-				<option value="12">December</option>
-				<option value="uk">Unknown</option>
-			</select>
-			<select id="day" name="day">
-				<option value="d">Day</option>
+    <div class="sidebar3">
+    	<div class="titleBlock">Search</div>        
+			<p>
 				<?php
-					for($i=1; $i<32; $i++){
-						echo "<option value=\"$i\">$i</option>\n";
+				include "dbconnect.php";
+				//echo $_POST["name"];
+				if($_POST["name"] != "" && $_POST["esrb"] != "none" && $_POST["genre"] != "" && $_POST["month"] != "m" && $_POST["day"] != "d" && $_POST["year"] != "y" && $_POST["piclink"] != ""){
+					$name = $_POST["name"];
+					$esrb = $_POST["esrb"];
+					$genre = $_POST["genre"];
+					$month = $_POST["month"];
+					$day = $_POST["day"];
+					$year = $_POST["year"];
+					$piclink = $_POST["piclink"];
+					
+					//echo $year/4;
+					if((($month == 9 || $month == 4 || $month == 6 || $month == 11) && $day > 30) || ($month == 2 && (($year % 4 != 0 && $day > 28) || $day > 29))){
+						echo "Ha, ha. Very funny. Please enter a valid date.";
+					} else {
+						//at this point, everything has been filled out, and the date given is a valid date.
+						$query = 'INSERT INTO gamereviews.videogames (id, gamename, ESRBrating, genre, releasedate, score, replayability, AdminReview, picturelink) VALUES (NULL, "'.$name.'", "'.$esrb.'", "'.$genre.'", "'.$year.'-'.$month.'-'.$day.'", NULL, NULL, NULL, "'.$piclink.'");';
+						mysqli_query($db, $query)
+								or die("Error Querying Database");
+						$query = 'SELECT * FROM gamereviews.videogames WHERE gamename = "'.$name.'" AND ESRBRating = "'.$esrb.'" AND releasedate = "'.$year.'-'.$month.'-'.$day.'";';
+						//echo $query;
+						$result = mysqli_query($db, $query)
+								or die("Error Querying Database");
+						$row = mysqli_fetch_array($result);
+						$id = $row['id'];
+						echo 'Click <a href="showGame.php?id=' . $id . '">here</a> to go to the page you just created!';
+						
 					}
+					
+				} else {
+					echo "Please fill out all required fields.";
+				}
+
 				?>
-				<option value="uk">Unknown</option>
-			</select>
-			<select id="year" name="year">
-				<option value="y">Year</option>
-				<?php
-					for($i=2050; $i>1949; $i--){
-						echo "<option value=\"$i\">$i</option>\n";
-					}
-				?>
-			</select><br/>
-			Link to a Picture: <input type="text" id="piclink" name="piclink" size="40"/><br/>
-		<input type="submit" value="Add Game!" name="submit" />
-	</form>
-			</p>
-    </div>
-    <br class="clearfloat" />
+			</p>    
+		</div>    
+	<br class="clearfloat" />
 </div>
 <!-- end #container -->
 <!-- begin #footer -->
