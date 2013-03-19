@@ -6,7 +6,9 @@ GC.init = function(){
 };
 
 GC.check = function(){
-	
+	alert("hello, there! :)");
+	var name = $("#name").val();
+	alert(name);
 };
 
 $(document).ready(GC.init);
