@@ -8,4 +8,6 @@ VideoGameWebsite
     -source "your file dir"/videoGame.sql
 #4) Access localhost
 #5) Click VideoGameWebsite - Master
+	-go to "localhost/VideoGameWebsite/gamelist314.php" to populate database.
+	-go back to "localhost/VideoGameWebsite/index.php"
 #6) You're done!
