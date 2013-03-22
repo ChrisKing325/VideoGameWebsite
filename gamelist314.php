@@ -86,3 +86,4 @@ $query = "INSERT INTO gamereviews.videogames (id, gamename, ESRBrating, genre, r
    
  mysqli_query($db, $query)
       		or die("Error Querying Database");
+include "addSystems.php";
