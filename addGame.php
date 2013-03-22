@@ -97,6 +97,19 @@
 				?>
 			</select><br/>
 			Link to a Picture: <input type="text" id="piclink" name="piclink" size="40"/><br/>
+			Select a System: 
+			<select id="system" name="system">
+				<option value="sys">System</option>
+				<?php
+					include "dbconnect.php";
+					$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
+					$result = mysqli_query($db, $query)
+						or die("Error Querying Database");
+					while($row = mysqli_fetch_array($result)) {
+						echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
+					}
+				?>
+			</select><br/>
 		<input type="submit" value="Add Game!" name="submit" />
 	</form>
 			</p>
