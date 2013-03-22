@@ -30,7 +30,7 @@ CREATE TABLE reviews (
 CREATE TABLE users (
 	id int NOT NULL auto_increment,
 	userName VARCHAR(25) NOT NULL,
-	password VARCHAR(20) NOT NULL,
+	password VARCHAR(40) NOT NULL,
 	name VARCHAR(20) NOT NULL,
 	favConsole VARCHAR(25) NOT NULL,
 	PRIMARY KEY (id)
