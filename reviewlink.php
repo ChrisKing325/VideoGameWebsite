@@ -30,9 +30,9 @@
         <!-- begin #navcontainer -->
         <div id="navcontainer">
             <ul id="navlist">
-                <li id="active"><a href="index.php" id="current">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="reviewlink.php">Reviews</a></li>
+                <li id="active"><a href="reviewlink.php" id="current">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
@@ -46,7 +46,7 @@
 			</p>
     </div>
 	
-	<div class="sidebar2">
+	<div class="sidebar3">
     	<div class="titleBlock">Welcome to Video Game Reviews!</div>
         <h1>Your one stop shop to every game in existence.</h1>
         <p>
@@ -56,13 +56,15 @@
 		$result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 		
-		echo '<div class="gamelist">';
+		//echo '<div class="gamelist">';
+		echo '<p>';
 		while($row = mysqli_fetch_array($result)) {
   			$game = $row['gamename'];
   			$id = $row['id'];
 		  	echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
 	    }
-		echo '</div>';
+		//echo '</div>';
+		echo '</p>';
 		
 	?>
         </p>
