@@ -37,7 +37,7 @@
         <div id="navcontainer">
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
-				<li><a href="login.php">Login</a></li>
+				<li id="active"><a href="login.php" id="current">Login</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="review.php">Reviews</a></li>
                 <li><a href="#">Contact</a></li>

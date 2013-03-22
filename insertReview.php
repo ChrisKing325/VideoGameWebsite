@@ -44,9 +44,10 @@
 					}
 				?>
                 <li><a href="#">About</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li id="active"><a href="review.php" id="current">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
-				<li id="active"><a href="search.php" id="current">Search</a></li>
+				<li><a href="search.php">Search</a></li>
+				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->

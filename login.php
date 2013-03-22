@@ -36,15 +36,15 @@
                 <li><a href="index.php">Home</a></li>
 				<?php
 					if($_SESSION['loggedin'] == true){
-						echo '<li><a href="logout.php">Logout</a></li>';
+						echo '<li id="active"><a href="logout.php" id="current">Logout</a></li>';
 					} else {
-						echo '<li><a href="login.php">Login</a></li>';
+						echo '<li id="active"><a href="login.php" id="current">Login</a></li>';
 					}
 				?>
                 <li><a href="#">About</a></li>
                 <li><a href="reviewlink.php">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
-				<li id="active"><a href="search.php" id="current">Search</a></li>
+				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
