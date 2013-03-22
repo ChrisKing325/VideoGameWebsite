@@ -34,7 +34,7 @@
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Reviews</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li id="active"><a href="search.php" id="current">Search</a></li>
@@ -90,6 +90,19 @@
 				<?php
 					for($i=2050; $i>1949; $i--){
 						echo "<option value=\"$i\">$i</option>\n";
+					}
+				?>
+			</select><br/>
+			System: 
+			<select id="system" name="system">
+				<option value="sys">System</option>
+				<?php
+					include "dbconnect.php";
+					$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
+					$result = mysqli_query($db, $query)
+						or die("Error Querying Database");
+					while($row = mysqli_fetch_array($result)) {
+						echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
 					}
 				?>
 			</select><br/>
