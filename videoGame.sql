@@ -4,7 +4,7 @@ USE gamereviews;
 
 CREATE TABLE videogames (
   id int NOT NULL auto_increment,
-  gamename VARCHAR(25),
+  gamename VARCHAR(255),
   ESRBrating VARCHAR(20),
   genre VARCHAR(15),
   releasedate DATE,
