@@ -48,11 +48,11 @@ a:hover {
 	color:#f6a92f;
 }
 #container { 
-	width: 800px;  
+	width: 749px;  
 	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
 }
 .headerPic {
-	width:800px;
+	width:749px;
 	height:324px;
 	color:#FFFFFF;
 	background:url(images/headerPic.jpg) no-repeat left top;
