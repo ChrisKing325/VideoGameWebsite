@@ -69,7 +69,7 @@
 		<div>
 			Don't see the game you're looking for? 
 			<a href="addGame.php">Create a page for it!</a>
-			
+		</div>
 			
 			</p>
     </div>
