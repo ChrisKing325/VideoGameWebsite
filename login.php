@@ -72,7 +72,9 @@
 				<input type="password" id="password" name="pw" size="40" />
 
 				<input type="submit" value="Login" name="submit" />
-			</form>  
+			</form>
+			<h1>Don't have an account?</h1>
+			<a href="createaccount.php">Click here</a> to join our site!
 	</div>    
 	<br class="clearfloat" />
 </div>
