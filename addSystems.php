@@ -12,15 +12,31 @@ $query = "INSERT INTO systems (id, system) VALUES (1,'Xbox 360')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
-$query = "INSERT INTO systems (id, system) VALUES (2,'OSX')";
+$query = "INSERT INTO systems (id, system) VALUES (2,'PC')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished2";
+$query = "INSERT INTO systems (id, system) VALUES (3,'PC')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished2";
 $query = "INSERT INTO systems (id, system) VALUES (3,'PS3')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
-			echo "finished3";
+			echo "finished2";
+$query = "INSERT INTO systems (id, system) VALUES (3,'Xbox 360')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished2";
 $query = "INSERT INTO systems (id, system) VALUES (4,'SNES')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (4,'GBA')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (4,'Virtual Console')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
@@ -36,6 +52,18 @@ $query = "INSERT INTO systems (id, system) VALUES (7,'PS2')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (7,'PS3')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (7,'PC')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (7,'Xbox 360')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
 $query = "INSERT INTO systems (id, system) VALUES (8,'PC')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
@@ -44,11 +72,39 @@ $query = "INSERT INTO systems (id, system) VALUES (9,'PS1')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
-$query = "INSERT INTO systems (id, system) VALUES (10,'Original Xbox')";
+$query = "INSERT INTO systems (id, system) VALUES (10,'Xbox')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (10,'PC')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
 $query = "INSERT INTO systems (id, system) VALUES (11,'Android')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'PS2')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'PC')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'Xbox')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'Mac')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'iOS')";
+$result = mysqli_query($db, $query)
+   			or die("Error Querying Database");
+			echo "finished";
+$query = "INSERT INTO systems (id, system) VALUES (11,'PS3')";
 $result = mysqli_query($db, $query)
    			or die("Error Querying Database");
 			echo "finished";
