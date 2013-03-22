@@ -55,15 +55,15 @@
 			$query = "SELECT * FROM videogames INNER JOIN systems ON videogames.id = systems.id WHERE gamename LIKE '%$searchTerm%'";
 			$result = mysqli_query($db, $query)
 				or die("Error Querying Database");
+			echo '<div id="gamelist">';
+			while($row = mysqli_fetch_array($result)) {
+				$game = $row['gamename'];
+				$id = $row['id'];
+				$system = $row['system'];
+				echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>' . '&nbsp: &nbsp' . $system;
+			}
+			echo '</div>';
 		}
-		echo '<div id="gamelist">';
-		while($row = mysqli_fetch_array($result)) {
-  			$game = $row['gamename'];
-  			$id = $row['id'];
-			$system = $row['system'];
-		  	echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>' . '&nbsp: &nbsp' . $system;
-	    }
-		echo '</div>';
 		
 	?>
 		<div>
