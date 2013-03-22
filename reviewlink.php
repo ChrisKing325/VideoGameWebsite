@@ -42,33 +42,23 @@
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
-   
-			</p>
-    </div>
-	
 	<div class="sidebar3">
     	<div class="titleBlock">Welcome to Video Game Reviews!</div>
-        <h1>Your one stop shop to every game in existence.</h1>
-        <p>
-      <?php
-		include "dbconnect.php";
-		$query = 'SELECT * FROM videogames ORDER BY gamename';
-		$result = mysqli_query($db, $query)
-   			or die("Error Querying Database");
-		
-		//echo '<div class="gamelist">';
-		echo '<p>';
-		while($row = mysqli_fetch_array($result)) {
-  			$game = $row['gamename'];
-  			$id = $row['id'];
-		  	echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
-	    }
-		//echo '</div>';
-		echo '</p>';
-		
-	?>
-        </p>
-    </div>
+			<h1>Your one stop shop to every game in existence.</h1>
+			<p>
+				<?php
+					include "dbconnect.php";
+					$query = 'SELECT * FROM videogames ORDER BY gamename';
+					$result = mysqli_query($db, $query)
+						or die("Error Querying Database");
+					while($row = mysqli_fetch_array($result)) {
+						$game = $row['gamename'];
+						$id = $row['id'];
+						echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
+					}
+				?>
+			</p>
+		</div>
     <br class="clearfloat" />
 </div>
 <!-- end #container -->
