@@ -1,6 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <?php session_start();
 	include "dbconnect.php"
+	if($_POST['userName'] != "" && $_POST['pw'] != ""){
+		$username = $_POST['userName'];
+		$password = sha1($_POST['pw']);
+		$query = "SELECT id FROM gamereviews.users WHERE userName = '$username' AND password = '$password';";
+		$result = mysqli_query($db, $query)
+			or die("Error Querying Database");
+			$row = mysqli_fetch_array($result);
+		if(count($row) != 0){
+			$_SESSION['uid'] = $row['id'];
+			$_SESSION['loggedin'] = true;
+		}
+		
+	}
+	
+	
+	
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -37,9 +53,15 @@
         <div id="navcontainer">
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
+				<?php
+					if($_SESSION['loggedin'] == true){
+						echo '<li><a href="logout.php">Logout</a></li>';
+					} else {
+						echo '<li><a href="login.php">Login</a></li>';
+					}
+				?>
                 <li><a href="#">About</a></li>
                 <li id="active"><a href="review.php" id="current">Reviews</a></li>
-                <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
             </ul>
@@ -53,15 +75,7 @@
 		<p>
 		    <?php
 				if($_POST['userName'] != "" && $_POST['pw'] != ""){
-					$username = $_POST['userName'];
-					$password = sha1($_POST['pw']);
-					$query = "SELECT id FROM gamereviews.users WHERE userName = '$username' AND password = '$password';";
-					$result = mysqli_query($db, $query)
-						or die("Error Querying Database");
-						$row = mysqli_fetch_array($result);
-					if(count($row) != 0){
-						$_SESSION['uid'] = $row['id'];
-						$_SESSION['loggedin'] = true;
+					if(count($row) == 0){
 						echo "Login successful! Click <a href='index.php'>here</a> to go to the home page!";
 					} else {
 						echo '<span class="errorMessage">Incorrect username/password combination.</span>

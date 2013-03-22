@@ -33,9 +33,15 @@
         <div id="navcontainer">
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
+				<?php
+					if($_SESSION['loggedin'] == true){
+						echo '<li><a href="logout.php">Logout</a></li>';
+					} else {
+						echo '<li><a href="login.php">Login</a></li>';
+					}
+				?>
                 <li><a href="#">About</a></li>
                 <li><a href="reviewlink.php">Reviews</a></li>
-                <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li id="active"><a href="search.php" id="current">Search</a></li>
             </ul>

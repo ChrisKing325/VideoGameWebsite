@@ -1,11 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<!--<?php session_start();
-$_SESSION ['userID']=1 ?>
- -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<title>Review</title>
+	<?php session_start(); ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
+    type="text/javascript"></script>
+	<script src="createGame.js"></script>
+	<title>Add a Game</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -36,15 +37,9 @@ $_SESSION ['userID']=1 ?>
         <div id="navcontainer">
             <ul id="navlist">
                 <li><a href="index.php">Home</a></li>
-				<?php
-					if($_SESSION['loggedin'] == true){
-						echo '<li><a href="logout.php">Logout</a></li>';
-					} else {
-						echo '<li><a href="login.php">Login</a></li>';
-					}
-				?>
+				<li><a href="login.php">Login</a></li>
                 <li><a href="#">About</a></li>
-                <li id="active"><a href="review.php" id="current">Reviews</a></li>
+                <li><a href="review.php">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
             </ul>
@@ -53,16 +48,15 @@ $_SESSION ['userID']=1 ?>
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
-    <div class="sidebar3">
-    	<div class="titleBlock">Review</div>
-		<p>
-		    <form method="post" action="insertReview.php">
-			Enter your review of the game here: 
-			<input type="text" name="review" size="40"  />	<br />	
-			<input type="submit" value="Review" />
-		
-			</form>
-		</p>
+    <div id="sidebar3" class="sidebar3">
+    	<div class="titleBlock">Add a Game</div>
+        <p>
+			<?php
+				$_SESSION['loggedin'] = false;
+				$_SESSION['uid'] = -1;
+			?>
+			Logout successful!
+			</p>
     </div>
     <br class="clearfloat" />
 </div>
