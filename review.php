@@ -50,7 +50,7 @@ $_SESSION ['userID']=1 ?>
     <div class="sidebar3">
     	<div class="titleBlock">Review</div>
 		<p>
-		    <form method="get" action="insertReview.php">
+		    <form method="post" action="insertReview.php">
 			Enter your review of the game here: 
 			<input type="text" name="review" size="40"  />	<br />	
 			<input type="submit" value="Review" />

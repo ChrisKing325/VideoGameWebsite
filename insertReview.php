@@ -53,8 +53,8 @@
         	
 			<?php
 			include "dbconnect.php";
-			if(isset($_GET['review'])){
-				$reviewText = mysqli_real_escape_string($db, $_GET['review']);
+			if(isset($_POST['review'])){
+				$reviewText = mysqli_real_escape_string($db, $_POST['review']);
 				$query = "INSERT INTO gamereviews.reviews (userReviews) 
 					VALUES ('$reviewText') WHERE userID = " . $_SESSION['userID'] . ";";
 				
