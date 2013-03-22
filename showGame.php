@@ -44,7 +44,7 @@
             <ul id="navlist">
                 <li id=><a href="index.php">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li id="active"><a href="#" id="current">Reviews</a></li>
+                <li id="active"><a href="reviewlink.php" id="current">Reviews</a></li>
                 <li><a href="#">Member List</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
@@ -58,26 +58,31 @@
     	<div class="titleBlock">Game Info</div>
         <p>
         <?php
+			$game = $row['gamename'];
+			$rating = $row['ESRBrating'];
+			$genre = $row['genre'];
+			$date = $row['releasedate'];
+			$score = $row['score'];
+			$replayability = $row['replayability'];
+			$picture = $row['picturelink'];
+			echo "<h1>$game</h1>";
+			echo '<div id="gamelist">';
+			echo '<a href="' . $picture . '"><img src = "' . $picture . '" width=200px/></a>';
+			echo "ESRB rating: $rating <br/>";
+			echo "Genre: $genre <br/>";
+			echo "Release date: $date <br/>";
+			echo "Score: $score <br/>";
+			echo "Systems:<br/>";
+			echo "<ul>";
+			$query = "SELECT system FROM gamereviews.systems WHERE id=$id ORDER BY system;";
+			$result = mysqli_query($db, $query)
+					or die("Error Querying Database");
+			while($row = mysqli_fetch_array($result)) {
+				echo '- '.$row['system'];
+			}
+			echo '</div>';
 		
-		
-		
-  		$game = $row['gamename'];
-		$rating = $row['ESRBrating'];
-		$genre = $row['genre'];
-		$date = $row['releasedate'];
-		$score = $row['score'];
-		$replayability = $row['replayability'];
-		$picture = $row['picturelink'];
-		echo "<h1>$game</h1>";
-		echo '<div id="gamelist">';
-		echo '<a href="' . $picture . '"><img src = "' . $picture . '" width=200px/></a>';
-		echo "ESRB rating: $rating <br/>";
-		echo "Genre: $genre <br/>";
-		echo "Release date: $date <br/>";
-		echo "Score: $score <br/>";
-		echo '</div>';
-		
-	?>
+		?>
         </p>
     </div>
     <div class="sidebar2">
