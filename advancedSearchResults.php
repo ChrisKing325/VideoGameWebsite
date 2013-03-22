@@ -49,29 +49,62 @@
         <p>
         	
 			<?php
-		include "dbconnect.php";
-		if(isset($_GET['searchterm'])){
-			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
-			$query = "SELECT * FROM videogames WHERE gamename LIKE '%$searchTerm%' ORDER BY gamename;";
-			$result = mysqli_query($db, $query)
-				or die("Error Querying Database");
-			echo '<div id="gamelist">';
-			while($row = mysqli_fetch_array($result)) {
-				$game = $row['gamename'];
-				$id = $row['id'];
-				echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>';
-			}
-			echo '</div>';
-		}
+				include "dbconnect.php";
+				$query = "SELECT id,gamename from videogames";
+				if($_GET['name'] != ""){
+					$name = mysqli_real_escape_string($db, $_GET['name']);
+					$query = $query . " WHERE gamename LIKE '%$name%'";
+				}
+				if($_GET['esrb'] != "none"){
+					if($_GET['name'] != ""){
+						$query = $query . " AND ";
+					} else {
+						$query = $query . " WHERE ";
+					}
+					$esrb = mysqli_real_escape_string($db, $_GET['esrb']);
+					$query = $query . "ESRBrating='$esrb'";
+				}
+				if($_GET['genre'] != ""){
+					if($_GET['name'] != "" || $_GET['esrb'] != "none"){
+						$query = $query . " AND ";
+					} else {
+						$query = $query . " WHERE ";
+					}
+					$genre = mysqli_real_escape_string($db, $_GET['genre']);
+					$query = $query . "genre LIKE '%$genre%'";
+				}
+				if($_GET['month'] != "m" && $_GET['day'] != "d" && $_GET['year'] != "y"){
+					if($_GET['name'] != "" || $_GET['esrb'] != "none" || $_GET['genre'] != ""){
+						$query = $query . " AND ";
+					} else {
+						$query = $query . " WHERE ";
+					}
+					$month = $_GET['month'];
+					$day = $_GET['day'];
+					$year = $_GET['year'];
+					$query = $query . " releasedate = '$year-$month-$day'";
+				}
+				$query = $query . ";";
+				//echo $query;
+				$result = mysqli_query($db, $query)
+					or die("Error Querying Database");
+				echo '<div class="gamelist" id="gamelist">';
+				
+				while($row = mysqli_fetch_array($result)) {
+					$game = $row['gamename'];
+					$id = $row['id'];
+					echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a><br/>';
+				}
+				echo '</div>';
 		
-	?>
-		<div>
-			Don't see the game you're looking for? 
-			<a href="addGame.php">Create a page for it!</a>
-			
-			
-			</p>
-    </div>
+		
+			?>
+			<div>
+				Don't see the game you're looking for? 
+				<a href="addGame.php">Create a page for it!</a>
+			</div>
+		</p>
+	</div>
     <br class="clearfloat" />
 </div>
 <!-- end #container -->
