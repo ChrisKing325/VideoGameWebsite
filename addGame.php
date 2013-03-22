@@ -57,6 +57,7 @@
 			<select id="esrb" name="esrb">
 				<option value="none">Select...</option>
 				<option value="Early Childhood">EC - Early Childhood</option>
+				<option value="Everyone">E - Everyone</option>
 				<option value="Everyone 10+">E10 - Everyone 10+</option>
 				<option value="Teen">T - Teen</option>
 				<option value="Mature">M - Mature</option>
