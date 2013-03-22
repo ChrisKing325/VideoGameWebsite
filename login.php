@@ -1,9 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Video Game Reviews</title>
-<link href="styles.css" rel="stylesheet" type="text/css" />
+	<title>Search</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
 <style type="text/css"> 
 /* place css box model fixes for IE 5* in this conditional comment */
@@ -16,7 +17,8 @@
 #mainContent { zoom: 1; }
 /* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
 </style>
-<![endif]--></head>
+<![endif]-->
+</head>
 
 <body>
 <!-- begin #container -->
@@ -30,44 +32,20 @@
         <!-- begin #navcontainer -->
         <div id="navcontainer">
             <ul id="navlist">
-                <li ><a href="index.php">Home</a></li>
-				<li class="tab_selected"><a href="login.php">Login</a></li>
-				<li><a href="search.php">Search for Game</a></li>
-				<li><a href="about_us.html">About Us</a></li>
-				<li><a href="contact.html">Contact Us</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
+                <li><a href="#">Member List</a></li>
+                <li><a href="#">Contact</a></li>
+				<li id="active"><a href="search.php" id="current">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
     </div>
     <!-- end #header -->
-   <head>
-      
-	  <?php
-  	   include "dbconnect.php";
-  	   if (isset($_POST['userName'])){
-  	     $name = $_POST['userName'];
-         $pw = sha1($_POST['pw']);
-
-         $query = "select * from users WHERE userName = '$name' AND password = '$pw'";
-         $result = mysqli_query($db, $query)
-         or die("Error Querying Database");
-         if ($row = mysqli_fetch_array($result))
-         {
-   		#echo $query;
-   		echo '<META http-equiv="refresh" content="0;URL=index.php">';
-       }}
-?>
-      
-      <div id="content">
-        <!-- insert the page content here -->
-    
-        <?php
-        if (isset($_POST['username'])) {
-        echo "<h2>Incorrect Username/Password</h2>";
-        }
-        ?>
-        <div class="sidebar2">
-			<div class="titleBlock">Let's Begin Reviewing</div>
+    <div class="headerPic"><h2></h2></div>
+    <div class="sidebar3">
+    	<div class="titleBlock">Let's Begin Reviewing</div>
 			<h1>Thank you for coming to VideoGameWebsite</h1>
 			<p>
         	For our returning members:
@@ -78,17 +56,36 @@
 			<br /><br />
 			WELCOME TO VIDEOGAMEWEBSITE! Here we try and provide a simple way of reading reviews and writing reviews for videogames. Please join us in the quest to make picking video games as easy as possible.
 			</p>
-		</div>
-        <h1>Login</h1>
-          <form method="post" action="login.php">
-    <p>
-    <label for="userName">Username:</label>
-    <input type="text" id="userName" name="userName" size="40" </p>
-    <p>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="pw" size="40" /></p>
+		
+			<h1>Login</h1>
+			<form method="post" action="login.php">
+				<label for="userName">Username:</label>
+				<input type="text" id="userName" name="userName" size="40" /><br/>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="pw" size="40" />
 
-    <p><input type="submit" value="login" name="submit" /></p>
-  </form>
-  
+				<input type="submit" value="Login" name="submit" />
+			</form>  
+	</div>    
+	<br class="clearfloat" />
+</div>
+<!-- end #container -->
+<!-- begin #footer -->
+    <div id="footer">
+        <p>
+        Terms of Use |
+        <a title="This page validates as XHTML 1.0 Strict" href="http://validator.w3.org/check/referer" class="footerLink"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | 
+        <a title="This page validates as CSS" href="http://jigsaw.w3.org/css-validator/check/referer" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br />
+        Copyright &copy; Games Club. Designed by <a href="http://www.freewebsite-template.com" title="Free Website Templates">Free Website Templates</a>
+        </p>
+    </div>
+<!-- end #footer -->
+
+
+	
+
+
+
+</body>
+
 </html>
