@@ -1,29 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-<?php session_start();
-	include "dbconnect.php";
-	if($_POST['userName'] != "" && $_POST['pw'] != ""){
-		$username = $_POST['userName'];
-		$password = sha1($_POST['pw']);
-		$query = "SELECT id FROM gamereviews.users WHERE userName = '$username' AND password = '$password';";
-		$result = mysqli_query($db, $query)
-			or die("Error Querying Database");
-			$row = mysqli_fetch_array($result);
-		if(count($row) != 0){
-			$_SESSION['uid'] = $row['id'];
-			$_SESSION['loggedin'] = true;
-		}
-		
-	}
-	
-	
-	
-?>
-	<title>Login</title>
+<?php session_start(); ?>
+	<title>Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -56,15 +36,15 @@
                 <li><a href="index.php">Home</a></li>
 				<?php
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-						echo '<li id="active"><a href="logout.php" id="current">Logout</a></li>';
+						echo '<li><a href="logout.php">Logout</a></li>';
 					} else {
-						echo '<li id="active"><a href="login.php" id="current">Login</a></li>';
+						echo '<li><a href="login.php">Login</a></li>';
 					}
 				?>
                 <li><a href="#">About</a></li>
-                <li><a href="review.php">Reviews</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
-				<li><a href="search.php">Search</a></li>
+				<li id="active"><a href="search.php" id="current">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
@@ -72,35 +52,17 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Login</div>
-		<p>
-		    <?php
-				if($_POST['userName'] != "" && $_POST['pw'] != ""){
-					if($_SESSION['loggedin'] == true){
-						echo "Login successful! Click <a href='index.php'>here</a> to go to the home page!";
-					} else {
-						echo '<span class="errorMessage">Incorrect username/password combination.</span>
-						<form method="post" action="gologin.php">
-							<label for="userName">Username:</label>
-							<input type="text" id="userName" name="userName" size="40" /><br/>
-							<label for="password">Password:</label>
-							<input type="password" id="password" name="pw" size="40" />
-							<input type="submit" value="Login" name="submit" />
-						</form>  ';
-					}
-					
-				}
-				
-				
-			?>
-			
-			
-			
-			
-			
-		</p>
-    </div>
-    <br class="clearfloat" />
+    	<div class="titleBlock">Search</div>        
+			<p>        	
+				<form method="get" action="searchResults.php">		
+				Enter your search term here: 		
+				<input type="text" id="searchterm" name="searchterm" size="40"/>		
+				<input type="submit" value="Search" name="submit" />		
+				<a href="advancedSearch.php"> Advanced Search</a>	
+				</form>			
+			</p>    
+		</div>    
+	<br class="clearfloat" />
 </div>
 <!-- end #container -->
 <!-- begin #footer -->

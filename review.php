@@ -4,7 +4,7 @@
 
 <head>
 <?php session_start(); ?>
-	<title>Review</title>
+	<title>Create a Review</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -53,7 +53,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Review</div>
+    	<div class="titleBlock">Create a Review</div>
 		<p>
 		    <form method="post" action="insertReview.php">
 			Enter your review of the game here: 

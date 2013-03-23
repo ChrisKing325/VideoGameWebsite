@@ -6,7 +6,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
     type="text/javascript"></script>
 	<script src="createGame.js"></script>
-	<title>Add a Game</title>
+	<title>Logout</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -49,7 +49,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div id="sidebar3" class="sidebar3">
-    	<div class="titleBlock">Add a Game</div>
+    	<div class="titleBlock">Logout</div>
         <p>
 			<?php
 				$_SESSION['loggedin'] = false;

@@ -50,7 +50,7 @@
 
 
 ?>
-	<title>Search</title>
+	<title>Create an Account</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>

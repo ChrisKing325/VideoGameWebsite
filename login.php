@@ -3,7 +3,7 @@
 
 <head>
 	<?php session_start(); ?>
-	<title>Search</title>
+	<title>Login</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>

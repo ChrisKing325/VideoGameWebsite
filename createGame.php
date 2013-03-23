@@ -3,7 +3,7 @@
 
 <head>
 <?php session_start(); ?>
-	<title>Search</title>
+	<title>Add a Game</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -52,7 +52,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>        
+    	<div class="titleBlock">Add a Game</div>        
 			<p>
 				<?php
 				include "dbconnect.php";
