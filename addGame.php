@@ -118,7 +118,13 @@
 					}
 				?>
 			</select><br/>
-		<input type="submit" value="Add Game!" name="submit" />
+		<?php
+			if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+					echo '<input type="submit" value="Add Game!" name="submit" />';
+				} else {
+					echo '<div class="errorMessage">You must be logged in to add a game.</div>';
+				}
+		?>
 	</form>
 			</p>
     </div>
