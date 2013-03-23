@@ -33,7 +33,7 @@ CREATE TABLE users (
 	password VARCHAR(40) NOT NULL,
 	name VARCHAR(255) NOT NULL,
 	favConsole VARCHAR(255) NOT NULL,
-	aboutMe VARCHAR(255) NOT NULL,
+	aboutMe VARCHAR(255),
 	PRIMARY KEY (id)
 );
 	
