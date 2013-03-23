@@ -3,7 +3,17 @@
 
 <head>
 <?php session_start(); ?>
-	<title>Search</title>
+	<title>
+	<?php
+		include "dbconnect.php";
+		$id = $_GET['id'];
+		$query = "SELECT * FROM gamereviews.users WHERE id= $id";
+		$result = mysqli_query($db, $query)
+			or die("Error Querying Database");
+		$row = mysqli_fetch_array($result);
+		echo $row['userName'];
+	?>	
+	</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -52,14 +62,20 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>        
+    	<div class="titleBlock">
+			<?php
+				echo $row['userName'] . "'s Page";
+			?>
+		</div>        
 			<p>        	
-				<form method="get" action="searchResults.php">		
-				Enter your search term here: 		
-				<input type="text" id="searchterm" name="searchterm" size="40"/>		
-				<input type="submit" value="Search" name="submit" />		
-				<a href="advancedSearch.php"> Advanced Search</a>	
-				</form>			
+				Name: <?php echo $row['name']; ?> <br/>
+				My favorite console: <?php echo $row['favConsole']; ?> <br/>
+				About me:<br/>
+				<?php echo $row['aboutMe']; ?> <br/>
+				My reviews:<br/>
+
+
+				
 			</p>    
 		</div>    
 	<br class="clearfloat" />

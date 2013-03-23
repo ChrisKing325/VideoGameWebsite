@@ -17,7 +17,7 @@ CREATE TABLE videogames (
 
 CREATE TABLE systems (
 	id int NOT NULL,
-	system VARCHAR(20)
+	system VARCHAR(255)
 );
 
 CREATE TABLE reviews (
@@ -31,8 +31,9 @@ CREATE TABLE users (
 	id int NOT NULL auto_increment,
 	userName VARCHAR(25) NOT NULL,
 	password VARCHAR(40) NOT NULL,
-	name VARCHAR(20) NOT NULL,
-	favConsole VARCHAR(25) NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	favConsole VARCHAR(255) NOT NULL,
+	aboutMe VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
 	
