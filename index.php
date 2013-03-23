@@ -34,9 +34,9 @@
                 <li id="active"><a href="index.php" id="current">Home</a></li>
 				<?php
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-						echo '<li id="active"><a href="logout.php" id="current">Logout</a></li>';
+						echo '<li><a href="logout.php">Logout</a></li>';
 					} else {
-						echo '<li id="active"><a href="login.php" id="current">Login</a></li>';
+						echo '<li><a href="login.php">Login</a></li>';
 					}
 				?>
                 <li><a href="#">About</a></li>

@@ -3,6 +3,7 @@
 
 <head>
 <?php session_start();
+	include "dbconnect.php";
 	if($_POST['username'] != "" && $_POST['pw1'] != "" && $_POST['pw2'] != "" && $_POST['name'] != "" && $_POST['system'] != "sys"){
 		$allfields = true;
 		$username = $_POST['username'];
@@ -18,7 +19,7 @@
 			$row = mysqli_fetch_array($result);
 			if(count($row) == 0){
 				$usernameavailable = true;
-				$query = "INSERT INTO gamereviews.users (id, userName, password, name, favConsole) VALUES(NULL, '$username', '$password', '$name', '$console');";
+				$query = "INSERT INTO gamereviews.users (id, userName, password, name, favConsole) VALUES(NULL, '$username', '$pw1', '$name', '$console');";
 				mysqli_query($db, $query)
 					or die("Error Querying Database");
 				$_SESSION['loggedin'] = true;
@@ -36,6 +37,12 @@
 		}
 	} else {
 		$allfields = false;
+		if(isset($_POST['username'])){
+			$username = $_POST['username'];
+		}
+		if(isset($_POST['name'])){
+			$name = $_POST['name'];
+		}
 	}
 
 
@@ -117,14 +124,21 @@
 							}
 						}
 						echo "<form method='post' action='accountCreated.php'>
-								Please enter your name: <input type='text' id='name' name='name' size='40'/><br/>
-								Please choose a username: <input type='text' id='username' name='username' size='40'/><br/>
+								Please enter your name: <input type='text' id='name' name='name' size='40' value='";
+								if(isset($name)){
+									echo $name;
+								}
+								echo "'/><br/>
+								Please choose a username: <input type='text' id='username' name='username' size='40' value='";
+								if(isset($username)){
+									echo $username;
+								}
+								echo "'/><br/>
 								Please enter a password: <input type='password' id='pw1' name='pw1' size='40' /><br/>
 								Please re-enter your password: <input type='password' id='pw2' name='pw2' size='40' /><br/>
 								Please select your favorite console: ";
 						echo '<select id="system" name="system">
 								<option value="sys">System</option>';
-									include "dbconnect.php";
 									$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
 									$result = mysqli_query($db, $query)
 										or die("Error Querying Database");
