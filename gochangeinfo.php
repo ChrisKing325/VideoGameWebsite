@@ -67,7 +67,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>        
+    	<div class="titleBlock">Update my Info</div>        
 			<p>        	
 				<?php
 					if($_POST['name'] != "" && $_POST['system'] != "sys" && $_POST['aboutme'] != "" && isset($id)){
@@ -77,6 +77,7 @@
 						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme' WHERE id='$id';";
 						mysqli_query($db, $query)
 							or die("Error Querying Database");
+						echo "Your information has been changed!";
 					} else {
 						if(isset($id)){
 							echo "Please fill out all fields.";
