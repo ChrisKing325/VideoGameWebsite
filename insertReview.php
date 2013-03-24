@@ -48,7 +48,6 @@
                 <li id="active"><a href="review.php" id="current">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
 				<li><a href="search.php">Search</a></li>
-				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
@@ -64,7 +63,7 @@
 			if(isset($_POST['review'])){
 				$reviewText = mysqli_real_escape_string($db, $_POST['review']);
 				$query = "INSERT INTO gamereviews.reviews (userReviews) 
-					VALUES ('$reviewText') WHERE userID = " . $_SESSION['userID'] . ";";
+					VALUES ('$reviewText') WHERE userID = " . $_SESSION['uid'] . ";";
 				
 				$result = mysqli_query($db, $query)
 					or die("Error Putting into Database");
