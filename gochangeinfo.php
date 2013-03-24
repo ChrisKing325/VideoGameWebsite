@@ -75,7 +75,6 @@
 						$console = $_POST['system'];
 						$aboutme = mysqli_real_escape_string($db, $_POST['aboutme']);
 						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme' WHERE id='$id';";
-						echo $query;
 						mysqli_query($db, $query)
 							or die("Error Querying Database");
 					} else {
