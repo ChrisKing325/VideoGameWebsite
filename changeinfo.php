@@ -3,22 +3,7 @@
 
 <head>
 <?php session_start(); ?>
-	<title>
-	<?php
-		include "dbconnect.php";
-		$id = $_GET['id'];
-		$query = "SELECT * FROM gamereviews.users WHERE id= $id";
-		$result = mysqli_query($db, $query)
-			or die("Error Querying Database");
-		$row = mysqli_fetch_array($result);
-		echo $row['userName'];
-		if(isset($_SESSION['uid']) && $_SESSION['uid'] == $id){
-			$isthisuser = true;
-		} else {
-			$isthisuser = false;
-		}
-	?>	
-	</title>
+	<title>Search</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -67,25 +52,47 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">
-			<?php
-				echo $row['userName'] . "'s Page";
-			?>
-		</div>        
-			<p>        	
-				Name: <?php echo $row['name']; ?> <br/>
-				My favorite console: <?php echo $row['favConsole']; ?> <br/>
-				About me:<br/>
+    	<div class="titleBlock">Search</div>        
+			<p>    
+
 				<?php
-					echo $row['aboutMe'];
-					if($isthisuser){
-						echo "<br/><a href='changeinfo.php?id=$id'>Click here</a> to change the above information.";
+				if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true){
+					include "dbconnect.php";
+					$id = $_GET['id'];
+					$query = "SELECT * FROM gamereviews.users WHERE id= $id";
+					$result = mysqli_query($db, $query)
+						or die("Error Querying Database");
+					$row = mysqli_fetch_array($result);
+					$username = $row['userName'];
+					$uid = $row['id'];
+					$name = $row['name'];
+					$console = $row['favConsole'];
+					$aboutme = $row['aboutMe'];
+					if($uid == $id){
+						echo "<form method='post' action='gochangeinfo.php'>
+							Name: <input type='text' id='name' name='name' size='25' value='" . $name . "'/><br/>
+							Favorite console: ";
+						echo '<select id="system" name="system">
+								<option value="sys">System</option>';
+									$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
+									$result = mysqli_query($db, $query)
+										or die("Error Querying Database");
+									while($row = mysqli_fetch_array($result)) {
+										echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
+									}
+						echo '</select><br/>';
+						echo "About me:
+							<input type='text' id='aboutme' name='aboutme' size='255' value='" . $aboutme;
+						echo "'/><br/>	
+							<input type='submit' value='Update my information' name='submit' />
+							</form>";
+					} else {
+						echo "Nice try, trying to change somebody else's info. Hacker. :P";
 					}
-				?> <br/>
-				My reviews:<br/>
-
-
-				
+				} else {
+					echo "You can only edit your information if you\'re logged in.";
+				}
+				?>
 			</p>    
 		</div>    
 	<br class="clearfloat" />
