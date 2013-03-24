@@ -56,6 +56,7 @@
                 <li><a href="index.php">Home</a></li>
 				<?php
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+						echo '<li><a href="mypage.php">My Page</a></li>';
 						echo '<li id="active"><a href="logout.php" id="current">Logout</a></li>';
 					} else {
 						echo '<li id="active"><a href="login.php" id="current">Login</a></li>';

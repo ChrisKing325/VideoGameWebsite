@@ -36,6 +36,7 @@
                 <li><a href="index.php">Home</a></li>
 				<?php
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+						echo '<li id="active"><a href="mypage.php" id="current">My Page</a></li>';
 						echo '<li><a href="logout.php">Logout</a></li>';
 					} else {
 						echo '<li><a href="login.php">Login</a></li>';
@@ -44,7 +45,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="reviewlink.php">Reviews</a></li>
                 <li><a href="#">Contact</a></li>
-				<li id="active"><a href="search.php" id="current">Search</a></li>
+				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
         <!-- end #navcontainer -->
