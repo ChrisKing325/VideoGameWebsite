@@ -22,8 +22,9 @@ CREATE TABLE systems (
 
 CREATE TABLE reviews (
 	id int NOT NULL,
-	userID int,
-	userReview VARCHAR(255),
+	gameID int NOT NULL,
+	userID int NOT NULL,
+	userReview VARCHAR(255) NOT NULL,
 	PRIMARY KEY(id)
 );
 
