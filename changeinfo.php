@@ -3,7 +3,7 @@
 
 <head>
 <?php session_start(); ?>
-	<title>Search</title>
+	<title>Update my Info</title>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
@@ -52,7 +52,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
     <div class="sidebar3">
-    	<div class="titleBlock">Search</div>        
+    	<div class="titleBlock">Update my Info</div>        
 			<p>    
 
 				<?php
@@ -81,9 +81,8 @@
 										echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
 									}
 						echo '</select><br/>';
-						echo "About me:
-							<input type='text' id='aboutme' name='aboutme' size='255' value='" . $aboutme;
-						echo "'/><br/>	
+						echo "About me:<br/>
+							<textarea rows='10' cols='30' id='aboutme' name='aboutme'>" . $aboutme . "</textarea><br/>	
 							<input type='submit' value='Update my information' name='submit' />
 							</form>";
 					} else {
