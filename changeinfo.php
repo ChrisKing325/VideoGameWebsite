@@ -59,7 +59,7 @@
 				<?php
 				if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] = true){
 					include "dbconnect.php";
-					$id = $_GET['id'];
+					$id = $_SESSION['uid'];
 					$query = "SELECT * FROM gamereviews.users WHERE id= $id";
 					$result = mysqli_query($db, $query)
 						or die("Error Querying Database");
@@ -69,26 +69,22 @@
 					$name = $row['name'];
 					$console = $row['favConsole'];
 					$aboutme = $row['aboutMe'];
-					if($uid == $id){
-						echo "<form method='post' action='gochangeinfo.php'>
-							Name: <input type='text' id='name' name='name' size='25' value='" . $name . "'/><br/>
-							Favorite console: ";
-						echo '<select id="system" name="system">
-								<option value="sys">System</option>';
-									$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
-									$result = mysqli_query($db, $query)
-										or die("Error Querying Database");
-									while($row = mysqli_fetch_array($result)) {
-										echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
-									}
-						echo '</select><br/>';
-						echo "About me:<br/>
-							<textarea rows='10' cols='30' id='aboutme' name='aboutme'>" . $aboutme . "</textarea><br/>	
-							<input type='submit' value='Update my information' name='submit' />
-							</form>";
-					} else {
-						echo "Nice try, trying to change somebody else's info. Hacker. :P";
-					}
+					echo "<form method='post' action='gochangeinfo.php'>
+						Name: <input type='text' id='name' name='name' size='25' value='" . $name . "'/><br/>
+						Favorite console: ";
+					echo '<select id="system" name="system">
+							<option value="sys">System</option>';
+								$query = "SELECT DISTINCT system FROM systems ORDER BY system;";
+								$result = mysqli_query($db, $query)
+									or die("Error Querying Database");
+								while($row = mysqli_fetch_array($result)) {
+									echo '<option value="' . $row['system'] . '">' . $row['system'] . '</option>\n';
+								}
+					echo '</select><br/>';
+					echo "About me:<br/>
+						<textarea rows='10' cols='30' id='aboutme' name='aboutme'>" . $aboutme . "</textarea><br/>	
+						<input type='submit' value='Update my information' name='submit' />
+						</form>";
 				} else {
 					echo "You can only edit your information if you\'re logged in.";
 				}

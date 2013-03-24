@@ -1,10 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
 <?php session_start(); ?>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Video Game Reviews</title>
-<link href="styles.css" rel="stylesheet" type="text/css" />
+	<title>
+	<?php
+		include "dbconnect.php";
+		if(isset($_SESSION['uid']) && $_SESSION['loggedin'] == true){
+			$id = $_SESSION['uid'];
+			$query = "SELECT * FROM gamereviews.users WHERE id= $id";
+			$result = mysqli_query($db, $query)
+				or die("Error Querying Database");
+			$row = mysqli_fetch_array($result);
+			echo $row['userName'];
+		} else {
+			echo "Please log in first.";
+		}
+	?>
+	</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<link href="styles.css" rel="stylesheet" type="text/css" />
 <!--[if IE 5]>
 <style type="text/css"> 
 /* place css box model fixes for IE 5* in this conditional comment */
@@ -17,7 +32,8 @@
 #mainContent { zoom: 1; }
 /* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
 </style>
-<![endif]--></head>
+<![endif]-->
+</head>
 
 <body>
 <!-- begin #container -->
@@ -31,10 +47,10 @@
         <!-- begin #navcontainer -->
         <div id="navcontainer">
             <ul id="navlist">
-                <li id="active"><a href="index.php" id="current">Home</a></li>
+                <li><a href="index.php">Home</a></li>
 				<?php
 					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-						echo '<li><a href="mypage.php?id=' . $_SESSION['uid'] . '">My Page</a></li>';
+						echo '<li id="active"><a href="mypage.php?id=' . $_SESSION['uid'] . '" id="current">My Page</a></li>';
 						echo '<li><a href="logout.php">Logout</a></li>';
 					} else {
 						echo '<li><a href="login.php">Login</a></li>';
@@ -50,41 +66,30 @@
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
-    
-    <div class="sidebar1">
-    	<div class="titleBlock">Highest Rated Games</div>
-        <h1>Top 5 Games</h1>
-        <p>
-        	<?php
-		include "dbconnect.php";
-		$query = 'SELECT * FROM videogames ORDER BY score DESC';
-		$result = mysqli_query($db, $query)
-   			or die("Error Querying Database");
-		
-		echo '<div class="gamelist">';
-		$i = 0;
-		while($row = mysqli_fetch_array($result)) {
-  			$game = $row['gamename'];
-  			$id = $row['id'];
-		  	if($i < 5) {
-		  		echo '<a href="showGame.php?id=' . $id . '">- ' . $game . '</a><br/>';
-				$i++;
-	    	}
-	    }
-		echo '</div>';
-		
-	?>
-			</p>
-    </div>
-	
-	<div class="sidebar2">
-    	<div class="titleBlock">Welcome to Video Game Reviews!</div>
-        <h1>Tired of the press reviewing games and inflating scores? No more my friend. At Video Game Reviews, you make the review and share it with the community. Let your voice be heard.</h1>
-        <p>
-        Here at Video Game Reviews you can look up reviews for virtually every game in existence! Share your opinion on them with our patented "Quick-Review" system. Voice your opinion in 255 characters or less. 
-        </p>
-    </div>
-    <br class="clearfloat" />
+    <div class="sidebar3">
+    	<div class="titleBlock">Search</div>        
+			<p>        	
+				<?php
+					if($_POST['name'] != "" && $_POST['system'] != "sys" && $_POST['aboutme'] != "" && isset($id)){
+						$name = $_POST['name'];
+						$console = $_POST['system'];
+						$aboutme = mysqli_real_escape_string($db, $_POST['aboutme']);
+						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme' WHERE id='$id';";
+						echo $query;
+						mysqli_query($db, $query)
+							or die("Error Querying Database");
+					} else {
+						if(isset($id)){
+							echo "Please fill out all fields.";
+						} else {
+							echo "Please log in first.";
+						}
+					}
+					
+				?>
+			</p>    
+		</div>    
+	<br class="clearfloat" />
 </div>
 <!-- end #container -->
 <!-- begin #footer -->
@@ -97,5 +102,12 @@
         </p>
     </div>
 <!-- end #footer -->
+
+
+	
+
+
+
 </body>
+
 </html>

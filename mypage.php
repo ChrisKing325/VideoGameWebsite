@@ -80,7 +80,7 @@
 				<?php
 					echo $row['aboutMe'];
 					if($isthisuser){
-						echo "<br/><a href='changeinfo.php?id=$id'>Click here</a> to change the above information.";
+						echo "<br/><a href='changeinfo.php'>Click here</a> to change the above information.";
 					}
 				?> <br/>
 				My reviews:<br/>
