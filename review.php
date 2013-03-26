@@ -57,8 +57,8 @@
     	<div class="titleBlock">Create a Review</div>
 		<p>
 		    <form method="post" action="insertReview.php">
-			Enter your review of the game here: 
-			<input type="text" name="review" size="40"  />	<br />	
+			Enter your review of the game here: <br/>
+			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
 			<input type="submit" value="Review" />
 		
 			</form>
