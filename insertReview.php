@@ -62,8 +62,8 @@
 			include "dbconnect.php";
 			if(isset($_POST['review'])){
 				$reviewText = mysqli_real_escape_string($db, $_POST['review']);
-				$query = "INSERT INTO gamereviews.reviews (userReviews) 
-					VALUES ('$reviewText') WHERE userID = " . $_SESSION['uid'] . ";";
+				$query = "INSERT INTO gamereviews.reviews (userReviews, userID) 
+					VALUES ('$reviewText', " . $_SESSION['uid'] . ");";
 				
 				$result = mysqli_query($db, $query)
 					or die("Error Putting into Database");

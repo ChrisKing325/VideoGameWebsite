@@ -56,7 +56,7 @@
     <div class="sidebar3">
     	<div class="titleBlock">Create a Review</div>
 		<p>
-		    <form method="post" action="insertReview.php">
+		    <form method="post" action="insertReview.php?id=<?php echo $_GET['id'];?>">
 			Enter your review of the game here: <br/>
 			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
 			<input type="submit" value="Review" />
