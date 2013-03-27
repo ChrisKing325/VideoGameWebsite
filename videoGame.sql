@@ -25,6 +25,7 @@ CREATE TABLE reviews (
 	gameID int NOT NULL,
 	userID int NOT NULL,
 	userReview blob NOT NULL,
+	time TIMESTAMP NOT NULL,
 	PRIMARY KEY(id)
 );
 
