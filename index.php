@@ -83,6 +83,7 @@
         <p>
         Here at Video Game Reviews you can look up reviews for virtually every game in existence! Share your opinion on them with our patented "Quick-Review" system. Voice your opinion in 255 characters or less. 
         </p>
+		
     </div>
     <br class="clearfloat" />
 </div>
