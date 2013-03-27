@@ -112,7 +112,7 @@
 			Enter your review of the game here: <br/>
 			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
 			<?php
-				if(isset($_SESSION['loggedin']) && $_SESSION['logggedin']==true){
+				if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
 					echo ' <input type="submit" value="Review" /> ' ;
 				} else {
 					echo '<div class=errorMessage> Please log in before reviewing</div>';

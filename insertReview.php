@@ -62,10 +62,10 @@
 			include "dbconnect.php";
 			if(isset($_POST['review'])){
 				$reviewText = mysqli_real_escape_string($db, $_POST['review']);
-				$query = "INSERT INTO gamereviews.reviews (userReviews, userID) 
-					VALUES ('$reviewText', " . $_SESSION['uid'] . ");";
-				
-				$result = mysqli_query($db, $query)
+				$query = "INSERT INTO gamereviews.reviews (userReview, userID, gameID) 
+					VALUES ('$reviewText', " . $_SESSION['uid'] . " , " . $_GET['id'] . ");";
+				echo $query;
+				mysqli_query($db, $query)
 					or die("Error Putting into Database");
 			}
 					
