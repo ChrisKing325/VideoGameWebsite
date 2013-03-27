@@ -95,19 +95,26 @@
     </div>
     <div class="sidebar2">
     	<div class="titleBlock">Reviews</div>
-        <h1>Generic Review 1</h1>
-        <p>
-			Like, omg this game is AWESOME! Everybody totally needs to play it nao!!!!!!!!!!!!!!!!!!!!11
-			</p>
-		<h1>Generic Review 2</h1>
-		<p>
-			Eh, this game is okay.
-		</p>
-		<h1>Generic Review 3</h1>
-		<p>
-			Oh. Em. Gee. This is the absolute WORST game that anybody has ever made, ever. Anybody who plays it has no life whatsoever, and the creators need to go into a hole and die.
-		</p>
-		
+        <?php
+			include "dbconnect.php";
+			$query = 'SELECT userReview, userID FROM gamereviews.reviews WHERE gameID = ' . $_GET['id'] . ';';
+			//echo $query;
+		    $result = mysqli_query($db, $query)
+   			   or die("Error Querying Database");
+			echo '<div class="gamelist" id="gamelist">';
+				
+			while($row = mysqli_fetch_array($result)) {
+				$review = $row['userReview'];
+				$uid = $row['userID'];
+				$query2 = "SELECT userName from gamereviews.users WHERE id = $uid";
+				$result2 = mysqli_query($db, $query2)
+					or die("Error Querying username");
+				$row2 = mysqli_fetch_array($result2);
+				echo '<h1><a href="myPage.php?id=' . $uid . '">  ' . $row2['userName'] . '</a></h1><br/>';
+				echo "<p>" . $review . "</p></br>";
+			}
+			echo '</div>';
+		?>
 		 <form method="post" action="insertReview.php?id=<?php echo $_GET['id'];?>">
 			Enter your review of the game here: <br/>
 			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
