@@ -26,6 +26,8 @@ CREATE TABLE reviews (
 	userID int NOT NULL,
 	userReview blob NOT NULL,
 	time TIMESTAMP NOT NULL,
+	stars int NOT NULL,
+	replayability int NOT NULL,
 	PRIMARY KEY(id)
 );
 
