@@ -108,7 +108,19 @@
 			Oh. Em. Gee. This is the absolute WORST game that anybody has ever made, ever. Anybody who plays it has no life whatsoever, and the creators need to go into a hole and die.
 		</p>
 		
+		 <form method="post" action="insertReview.php?id=<?php echo $_GET['id'];?>">
+			Enter your review of the game here: <br/>
+			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
+			<?php
+				if(isset($_SESSION['loggedin']) && $_SESSION['logggedin']==true){
+					echo ' <input type="submit" value="Review" /> ' ;
+				} else {
+					echo '<div class=errorMessage> Please log in before reviewing</div>';
+				}
+			?>
+			
 		
+		</form>
     </div>
     <br class="clearfloat" />
 </div>
