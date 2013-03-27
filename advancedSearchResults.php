@@ -92,6 +92,16 @@
 					$year = $_GET['year'];
 					$query = $query . " releasedate = '$year-$month-$day'";
 				}
+				if($_GET['system'] != "sys"){
+					if($_GET['name'] != "" || $_GET['esrb'] != "none" || $_GET['genre'] != "" &&
+							$_GET['month'] != "m" && $_GET['day'] != "d" && $_GET['year'] != "y"){
+						$query = $query . " AND ";
+					} else {
+						$query = $query . " WHERE ";
+					}
+					$system = $_GET['system'];
+					//$query = $query . "system = '$system'";
+				}
 				$query = $query . ";";
 				//echo $query;
 				$result = mysqli_query($db, $query)

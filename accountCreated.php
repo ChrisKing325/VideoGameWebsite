@@ -4,6 +4,10 @@
 <head>
 <?php session_start();
 	include "dbconnect.php";
+	if(!isset($_SESSION['uid']) || !isset($_SESSION['loggedin'])){
+		$_SESSION['uid'] = -1;
+		$_SESSION['loggedin'] = false;
+	}
 	if($_POST['username'] != "" && $_POST['pw1'] != "" && $_POST['pw2'] != "" && $_POST['name'] != "" && $_POST['system'] != "sys"){
 		$allfields = true;
 		$username = $_POST['username'];
@@ -108,15 +112,15 @@
 					} else {
 						if($allfields){
 							if($pwmatch){
+								if($usernameavailable){
 							
+								} else {
+									echo '<div class="errorMessage">Sorry, that username has already been taken. Please choose another one.</div><br/>';
+								}
 							} else {
 								echo '<div class="errorMessage">Your passwords don\'t match.</div><br/>';
 							}
-							if($usernameavailable){
 							
-							} else {
-								echo '<div class="errorMessage">Sorry, that username has already been taken. Please choose another one.</div><br/>';
-							}
 						} else {
 							if($_SESSION['loggedin'] == true){
 								echo "You can't create an account if you're already logged in, silly! :P";

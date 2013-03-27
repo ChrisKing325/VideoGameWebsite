@@ -56,7 +56,7 @@
     	<div class="titleBlock">Create an Account!</div>        
 			<p>        	
 				<?php
-					if($_SESSION['loggedin'] == true){
+					if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
 						echo "You can't create an account if you're signed in, silly! :P";
 					} else {
 						echo "<form method='post' action='accountCreated.php'>

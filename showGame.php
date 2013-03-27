@@ -86,7 +86,7 @@
 			$result = mysqli_query($db, $query)
 					or die("Error Querying Database");
 			while($row = mysqli_fetch_array($result)) {
-				echo '- '.$row['system'];
+				echo '- '.$row['system']."<br/>";
 			}
 			echo '</div>';
 		
