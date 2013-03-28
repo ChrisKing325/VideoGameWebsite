@@ -67,24 +67,57 @@
     </div>
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
-    <div class="sidebar3">
+	<div class="sidebar1">
+		<div class="titleBlock">
+			Picture
+		</div>
+		<img src=" <?php echo $row['piclink'] ?> " width=200px />
+	</div>
+    <div class="sidebar2">
     	<div class="titleBlock">
 			<?php
 				echo $row['userName'] . "'s Page";
 			?>
 		</div>        
 			<p>        	
-				Name: <?php echo $row['name']; ?> <br/>
-				My favorite console: <?php echo $row['favConsole']; ?> <br/>
-				About me:<br/>
+				<h1>Name:</h1><br/>
+				<span class="dontbeallthewayontheright">
+				<?php echo $row['name']; ?></span> <br/>
+				<h1>My favorite console:</h1><br/>
+				<span class="dontbeallthewayontheright">
+				<?php echo $row['favConsole']; ?></span> <br/>
+				<h1>About me:</h1><br/>
+				<span class="dontbeallthewayontheright">
 				<?php
 					echo $row['aboutMe'];
 					if($isthisuser){
-						echo "<br/><a href='changeinfo.php'>Click here</a> to change the above information.";
+						echo "<br/><a href='changeinfo.php' class='dontbeallthewayontheright'>Click here</a> to change the above information.";
 					}
-				?> <br/>
+				?></span> <br/>
+			</p>
+			<p>
 				My reviews:<br/>
-
+				<?php
+					$query = "SELECT * FROM gamereviews.reviews WHERE userID = " . $_GET['id'] . " ORDER BY timeReviewed DESC;";
+					$result = mysqli_query($db, $query)
+						or die("Error Querying Database 2");
+					echo '<div class="reviewlist" id="reviewlist">';
+				
+					while($row = mysqli_fetch_array($result)) {
+						$gid = $row['gameID'];
+						$review = $row['userReview'];
+						
+						$query3 = "SELECT * FROM gamereviews.videogames WHERE id = $gid";
+						$result3 = mysqli_query($db, $query3)
+							or die("Error Querying Database 3");
+						$row3 = mysqli_fetch_array($result3);
+						$game = $row3['gamename'];
+						
+						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1><br/>';
+						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/>";
+					}
+					echo '</div>';
+				?>
 
 				
 			</p>    

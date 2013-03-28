@@ -21,9 +21,21 @@ a {
 	font-size:12px;
 	text-decoration:underline;
 }
+h1 a {
+	font-size:18px;
+	color:#f6a92f;
+	padding:0 10px 10px 10px;
+	text-decoration:underline;
+}
 a:hover {
 	color:#282828;
 	font-size:12px;
+	text-decoration:none;
+}
+h1 a:hover {
+	font-size:18px;
+	color:#f6a92f;
+	padding:0 10px 10px 10px;
 	text-decoration:none;
 }
 #header {
@@ -81,10 +93,16 @@ a:hover {
 	background:#FFFFFF;
 }
 .sidebar1 p, .sidebar2 p {
-	padding:10px;
+	margin:10px;
 }
 .sidebar3 p, .sidebar3 form{
 	float:left;
+	margin:10px;
+}
+.reviewlist, .reviewlist p{
+	margin:10px;
+}
+.dontbeallthewayontheright{
 	margin:10px;
 }
 .errorMessage{

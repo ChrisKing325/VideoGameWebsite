@@ -70,11 +70,12 @@
     	<div class="titleBlock">Update my Info</div>        
 			<p>        	
 				<?php
-					if($_POST['name'] != "" && $_POST['system'] != "sys" && $_POST['aboutme'] != "" && isset($id)){
+					if($_POST['name'] != "" && $_POST['system'] != "sys" && $_POST['aboutme'] != "" && $_POST['piclink'] != "" && isset($id)){
 						$name = $_POST['name'];
 						$console = $_POST['system'];
 						$aboutme = mysqli_real_escape_string($db, $_POST['aboutme']);
-						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme' WHERE id='$id';";
+						$piclink = mysqli_real_escape_string($db, $_POST['piclink']);
+						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme', piclink='$piclink' WHERE id='$id';";
 						mysqli_query($db, $query)
 							or die("Error Querying Database");
 						echo "Your information has been changed!";

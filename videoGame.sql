@@ -25,7 +25,7 @@ CREATE TABLE reviews (
 	gameID int NOT NULL,
 	userID int NOT NULL,
 	userReview blob NOT NULL,
-	time TIMESTAMP NOT NULL,
+	timeReviewed TIMESTAMP NOT NULL,
 	stars int NOT NULL,
 	replayability int NOT NULL,
 	PRIMARY KEY(id)
@@ -38,6 +38,7 @@ CREATE TABLE users (
 	name VARCHAR(255) NOT NULL,
 	favConsole VARCHAR(255) NOT NULL,
 	aboutMe blob,
+	piclink VARCHAR(255),
 	PRIMARY KEY (id)
 );
 	

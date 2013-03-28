@@ -82,7 +82,8 @@
 								}
 					echo '</select><br/>';
 					echo "About me:<br/>
-						<textarea rows='10' cols='30' id='aboutme' name='aboutme'>" . $aboutme . "</textarea><br/>	
+						<textarea rows='10' cols='30' id='aboutme' name='aboutme'>" . $aboutme . "</textarea><br/>
+						Link to a Profile Picture: <input type='text' id='piclink' name='piclink' size='25' value='" . $row['piclink'] . "'/><br/>
 						<input type='submit' value='Update my information' name='submit' />
 						</form>";
 				} else {
