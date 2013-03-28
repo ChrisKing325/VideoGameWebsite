@@ -58,10 +58,13 @@
         	
 			<?php
 				include "dbconnect.php";
-				$query = "SELECT id,gamename from videogames";
+				$query = "SELECT videogames.id,videogames.gamename from videogames";
+				if($_GET['system'] != "sys"){
+					$query = $query . " INNER JOIN systems ON videogames.id = systems.id";
+				}
 				if($_GET['name'] != ""){
 					$name = mysqli_real_escape_string($db, $_GET['name']);
-					$query = $query . " WHERE gamename LIKE '%$name%'";
+					$query = $query . " WHERE videogames.gamename LIKE '%$name%'";
 				}
 				if($_GET['esrb'] != "none"){
 					if($_GET['name'] != ""){
@@ -70,7 +73,7 @@
 						$query = $query . " WHERE ";
 					}
 					$esrb = mysqli_real_escape_string($db, $_GET['esrb']);
-					$query = $query . "ESRBrating='$esrb'";
+					$query = $query . "videogames.ESRBrating='$esrb'";
 				}
 				if($_GET['genre'] != ""){
 					if($_GET['name'] != "" || $_GET['esrb'] != "none"){
@@ -79,7 +82,7 @@
 						$query = $query . " WHERE ";
 					}
 					$genre = mysqli_real_escape_string($db, $_GET['genre']);
-					$query = $query . "genre LIKE '%$genre%'";
+					$query = $query . "videogames.genre LIKE '%$genre%'";
 				}
 				if($_GET['month'] != "m" && $_GET['day'] != "d" && $_GET['year'] != "y"){
 					if($_GET['name'] != "" || $_GET['esrb'] != "none" || $_GET['genre'] != ""){
@@ -90,7 +93,7 @@
 					$month = $_GET['month'];
 					$day = $_GET['day'];
 					$year = $_GET['year'];
-					$query = $query . " releasedate = '$year-$month-$day'";
+					$query = $query . "videogames.releasedate = '$year-$month-$day'";
 				}
 				if($_GET['system'] != "sys"){
 					if($_GET['name'] != "" || $_GET['esrb'] != "none" || $_GET['genre'] != "" &&
@@ -100,10 +103,10 @@
 						$query = $query . " WHERE ";
 					}
 					$system = $_GET['system'];
-					//$query = $query . "system = '$system'";
+					$query = $query . "systems.system = '$system'";
 				}
 				$query = $query . ";";
-				//echo $query;
+				echo $query;
 				$result = mysqli_query($db, $query)
 					or die("Error Querying Database");
 				echo '<div class="gamelist" id="gamelist">';
