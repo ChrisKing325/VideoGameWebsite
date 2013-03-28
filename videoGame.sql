@@ -8,7 +8,7 @@ CREATE TABLE videogames (
   ESRBrating VARCHAR(20),
   genre VARCHAR(15),
   releasedate DATE,
-  score int,
+  score DOUBLE(11,1),
   replayability VARCHAR(25),
   AdminReview blob,
   picturelink VARCHAR(255),
@@ -26,7 +26,7 @@ CREATE TABLE reviews (
 	userID int NOT NULL,
 	userReview blob NOT NULL,
 	timeReviewed TIMESTAMP NOT NULL,
-	stars int NOT NULL,
+	rating int NOT NULL,
 	replayability int NOT NULL,
 	PRIMARY KEY(id)
 );

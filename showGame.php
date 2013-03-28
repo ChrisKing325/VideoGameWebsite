@@ -76,6 +76,7 @@
 			echo "<h1>$game</h1>";
 			echo '<div id="gamelist">';
 			echo '<a href="' . $picture . '"><img src = "' . $picture . '" width=200px/></a>';
+			echo '<div class="dontbeallthewayontheright">';
 			echo "ESRB rating: $rating <br/>";
 			echo "Genre: $genre <br/>";
 			echo "Release date: $date <br/>";
@@ -88,7 +89,7 @@
 			while($row = mysqli_fetch_array($result)) {
 				echo '- '.$row['system']."<br/>";
 			}
-			echo '</div>';
+			echo '</div></div>';
 		
 		?>
         </p>
@@ -101,7 +102,7 @@
 			//echo $query;
 		    $result = mysqli_query($db, $query)
    			   or die("Error Querying Database");
-			echo '<div class="gamelist" id="gamelist">';
+			echo '<div class="dontbeallthewayontheright" id="gamelist">';
 				
 			while($row = mysqli_fetch_array($result)) {
 				$review = $row['userReview'];
@@ -116,11 +117,41 @@
 			echo '</div>';
 		?>
 		 <form method="post" action="insertReview.php?id=<?php echo $_GET['id'];?>">
-			Enter your review of the game here: <br/>
-			<textarea rows='10' cols='30' name="review"></textarea>	<br />	
+			<span class="dontbeallthewayontheright">Enter your review of the game here: </span><br/>
+			<textarea rows='10' cols='30' name="review" class="dontbeallthewayontheright"></textarea>	<br />	
+			<span class="dontbeallthewayontheright">Choose your rating for this game: 
+			<select name="rating" id="rating">
+				<option value=0>-</option>
+				<option value=1>1</option>
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+			</select></span><br/>
+			
+			<span class="dontbeallthewayontheright">Choose your replayability value for this game:
+			<select name="replayability" id="replayability">
+				<option value=0>-</option>
+				<option value=1>1</option>
+				<option value=2>2</option>
+				<option value=3>3</option>
+				<option value=4>4</option>
+				<option value=5>5</option>
+				<option value=6>6</option>
+				<option value=7>7</option>
+				<option value=8>8</option>
+				<option value=9>9</option>
+				<option value=10>10</option>
+			</select></span><br/>
+			
 			<?php
 				if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
-					echo ' <input type="submit" value="Review" /> ' ;
+					echo ' <input type="submit" value="Review" class="dontbeallthewayontheright"/> ' ;
 				} else {
 					echo '<div class=errorMessage> Please log in before reviewing</div>';
 				}
