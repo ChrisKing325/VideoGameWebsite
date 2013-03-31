@@ -98,6 +98,9 @@
 					if($isthisuser){
 						echo "<br/><a href='changeinfo.php' class='dontbeallthewayontheright'>Click here</a> to change the above information.";
 					}
+					echo "<br/>";
+					echo "<br/>";
+					echo "<hr>";
 				?></span> 
 				<br/>
 			</p>
