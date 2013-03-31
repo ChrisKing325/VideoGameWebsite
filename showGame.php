@@ -98,7 +98,7 @@
     	<div class="titleBlock">Reviews</div>
         <?php
 			include "dbconnect.php";
-			$query = 'SELECT userReview, userID, rating, replayability, timeReviewed FROM gamereviews.reviews WHERE gameID = ' . $_GET['id'] . ' ORDER BY DESC;';
+			$query = 'SELECT userReview, userID, rating, replayability, timeReviewed FROM gamereviews.reviews WHERE gameID = ' . $_GET['id'] . ' ORDER BY timeReviewed DESC;';
 			//echo $query;
 		    $result = mysqli_query($db, $query)
    			   or die("Error Querying Database");
