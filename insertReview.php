@@ -64,11 +64,12 @@
 				$reviewText = mysqli_real_escape_string($db, $_POST['review']);
 				$rating = $_POST['rating'];
 				$replayability = $_POST['replayability'];
-				$query = "INSERT INTO gamereviews.reviews (userReview, userID, gameID) 
-					VALUES ('$reviewText', " . $_SESSION['uid'] . " , " . $_GET['id'] . ");";
+				$query = "INSERT INTO gamereviews.reviews (userReview, userID, gameID, rating, replayability) 
+					VALUES ('$reviewText', " . $_SESSION['uid'] . " , " . $_GET['id'] . " , " . $rating . " , " . $replayability . ");";
 				//echo $query;
 				mysqli_query($db, $query)
 					or die("Error Putting into Database");
+					
 					
 				echo "Thanks for your feedback! <a href='showGame.php?id=" . $_GET['id'] . "'>Click here</a> to go back to the game you reviewed.";
 				
@@ -88,6 +89,7 @@
 				
 				$rating = $ratingtotal / $count;
 				$replayability = $replayabilitytotal / $count;
+				
 				$replay = "";
 				if($replayability <= 2){
 					$replay = "Low";
