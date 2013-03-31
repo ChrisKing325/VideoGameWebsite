@@ -107,7 +107,7 @@
 			<p>
 				<h1>My reviews:</h1>
 				<?php
-					$query = "SELECT * FROM gamereviews.reviews WHERE userID = " . $_GET['id'] . " ORDER BY timeReviewed DESC";
+					$query = "SELECT * FROM gamereviews.reviews WHERE userID = " . $_GET['id'] . " ORDER BY timeReviewed DESC;";
 					$result = mysqli_query($db, $query)
 						or die("Error Querying Database 2");
 					echo '<div class="reviewlist" id="reviewlist">';
