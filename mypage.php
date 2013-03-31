@@ -81,20 +81,21 @@
 		</div>        
 			<p>        	
 				<h1>Name:</h1>
-				<span class="dontbeallthewayontheright">
-				<?php echo $row['name']; ?></span> 
+				<span class="dontbeallthewayontheright"><font size="3">
+				<?php echo $row['name']; ?></font></span> 
 				<br/><br />
-				<h1>My favorite console:</h1>
+				<h1>My favorite console:</h1><font size="2">
 				<span class="dontbeallthewayontheright">
-				<?php echo $row['favConsole']; ?></span> 
+				<?php echo $row['favConsole']; ?></font></span> 
 				<br/><br/>
-				<h1>About me:</h1>
+				<h1>About me:</h1><font size="2">
 				<span class="dontbeallthewayontheright">
 				<?php
 					echo $row['aboutMe'];
 					echo "<br/>";
 					echo "<br/>";
 					echo "<hr>";
+					echo"</font>";
 					if($isthisuser){
 						echo "<br/><a href='changeinfo.php' class='dontbeallthewayontheright'>Click here</a> to change the above information.";
 					}
@@ -122,11 +123,12 @@
 						$row3 = mysqli_fetch_array($result3);
 						$game = $row3['gamename'];
 						
-						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1>' . $row['timeReviewed'];
-						echo '<br/> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . '<br/>';
-						echo "<br/>";
-						echo "<br/>";
+						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a><font size="2" color = "black">' . $row['timeReviewed'] . '</h1>';
+						echo '<p>  Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . ' <br/> </p>';
+						echo '<br />';
 						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/><br/>";
+						echo '<hr>';
+						echo '<br/>';
 					}
 					echo '</div>';
 				?>
