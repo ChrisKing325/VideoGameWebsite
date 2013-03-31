@@ -122,8 +122,10 @@
 						$row3 = mysqli_fetch_array($result3);
 						$game = $row3['gamename'];
 						
-						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1>';
-						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/>";
+						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1>' . $row['timeReviewed'];
+						echo "<br/>";
+						echo "<br/>";
+						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/><br/>";
 					}
 					echo '</div>';
 				?>
