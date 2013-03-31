@@ -3,11 +3,10 @@ VideoGameWebsite
 
 #1) Zip file from Github
 #2) Unzip folder into htdocs
-#3) Delete index.html from VideoGameWebsite folder
-#4) Log into mysql
+#3) Log into mysql
     -use gamereviews
     -source "your file dir"/videoGame.sql
-#5) Access localhost
-#6) Click VideoGameWebsite - Master
+#4) Access localhost
+#5) Click VideoGameWebsite - Master
 	-go to "localhost/VideoGameWebsite/index.php"
-#7) You're done!
+#6) You're done!
