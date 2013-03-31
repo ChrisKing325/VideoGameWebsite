@@ -80,23 +80,27 @@
 			?>
 		</div>        
 			<p>        	
-				<h1>Name:</h1><br/>
+				<h1>Name:</h1>
 				<span class="dontbeallthewayontheright">
-				<?php echo $row['name']; ?></span> <br/>
-				<h1>My favorite console:</h1><br/>
+				<?php echo $row['name']; ?></span> 
+				<br/><br />
+				<h1>My favorite console:</h1>
 				<span class="dontbeallthewayontheright">
-				<?php echo $row['favConsole']; ?></span> <br/>
-				<h1>About me:</h1><br/>
+				<?php echo $row['favConsole']; ?></span> 
+				<br/><br/>
+				<h1>About me:</h1>
 				<span class="dontbeallthewayontheright">
 				<?php
 					echo $row['aboutMe'];
+					echo "<br/>";
 					if($isthisuser){
 						echo "<br/><a href='changeinfo.php' class='dontbeallthewayontheright'>Click here</a> to change the above information.";
 					}
-				?></span> <br/>
+				?></span> 
+				<br/>
 			</p>
 			<p>
-				My reviews:<br/>
+				<h1>My reviews:</h1>
 				<?php
 					$query = "SELECT * FROM gamereviews.reviews WHERE userID = " . $_GET['id'] . " ORDER BY timeReviewed DESC;";
 					$result = mysqli_query($db, $query)
@@ -113,7 +117,7 @@
 						$row3 = mysqli_fetch_array($result3);
 						$game = $row3['gamename'];
 						
-						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1><br/>';
+						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1>';
 						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/>";
 					}
 					echo '</div>';
