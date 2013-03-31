@@ -45,9 +45,9 @@
 						echo '<li><a href="login.php">Login</a></li>';
 					}
 				?>
-                <li><a href="#">About</a></li>
-                <li><a href="review.php">Reviews</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
+                <li><a href="memberlist.php">Member List</a></li>
 				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
