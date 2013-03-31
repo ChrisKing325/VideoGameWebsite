@@ -51,12 +51,12 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
 	<div class="sidebar3">
-    	<div class="titleBlock">Check out the other members!<div>
+    	<div class="titleBlock">Check out the other members!</div>
 			<h1>Make friends, make enemies, we don't care just have fun!</h1>
 			<p>
 				<?php
 					include "dbconnect.php";
-					$query = 'SELECT * FROM users ORDER BY userName DESC';
+					$query = 'SELECT * FROM users ORDER BY userName ASC';
 					$result = mysqli_query($db, $query)
 						or die("Error Querying Database");
 					while($row = mysqli_fetch_array($result)) {

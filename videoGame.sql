@@ -39,7 +39,8 @@ CREATE TABLE users (
 	favConsole VARCHAR(255) NOT NULL,
 	aboutMe blob,
 	piclink VARCHAR(255),
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	INDEX ('userName')
 );
 	
 	

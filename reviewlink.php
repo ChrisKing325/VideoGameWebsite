@@ -51,7 +51,7 @@
     <!-- end #header -->
     <div class="headerPic"><h2></h2></div>
 	<div class="sidebar3">
-    	<div class="titleBlock">Every game review ever!<div>
+    	<div class="titleBlock">Every game review ever!</div>
 			<h1>Your one stop shop to every game in existence.</h1>
 			<p>
 				<?php
