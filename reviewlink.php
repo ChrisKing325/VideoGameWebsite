@@ -18,6 +18,7 @@
 /* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
 </style>
 <![endif]--></head>
+
 <body>
 <!-- begin #container -->
 <div id="container">
