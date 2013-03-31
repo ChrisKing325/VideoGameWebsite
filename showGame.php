@@ -98,7 +98,7 @@
     	<div class="titleBlock">Reviews</div>
         <?php
 			include "dbconnect.php";
-			$query = 'SELECT userReview, userID, timeReviewed FROM gamereviews.reviews WHERE gameID = ' . $_GET['id'] . ';';
+			$query = 'SELECT userReview, userID, rating, replayability, timeReviewed FROM gamereviews.reviews WHERE gameID = ' . $_GET['id'] . ';';
 			//echo $query;
 		    $result = mysqli_query($db, $query)
    			   or die("Error Querying Database");
@@ -112,6 +112,7 @@
 					or die("Error Querying username");
 				$row2 = mysqli_fetch_array($result2);
 				echo '<h1><a href="myPage.php?id=' . $uid . '">  ' . $row2['userName'] . '</a></h1>' . $row['timeReviewed'] . '<br/>';
+				echo '<br/> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . '<br/>';
 				echo "<p>" . $review . "</p></br>";
 				echo "<hr>";
 			}
