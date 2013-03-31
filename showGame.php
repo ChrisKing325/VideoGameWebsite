@@ -111,8 +111,9 @@
 				$result2 = mysqli_query($db, $query2)
 					or die("Error Querying username");
 				$row2 = mysqli_fetch_array($result2);
-				echo '<h1><a href="myPage.php?id=' . $uid . '">  ' . $row2['userName'] . '</a></h1><br/>';
+				echo '<h1><a href="myPage.php?id=' . $uid . '">  ' . $row2['userName'] . '</a></h1>' . $row2['timeReviewed'] . '<br/>';
 				echo "<p>" . $review . "</p></br>";
+				echo "<hr>";
 			}
 			echo '</div>';
 		?>
