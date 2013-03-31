@@ -100,7 +100,7 @@
 			<select id="year" name="year">
 				<option value="y">Year</option>
 				<?php
-					for($i=2050; $i>1949; $i--){
+					for($i=1972; $i<2015; $i++){
 						echo "<option value=\"$i\">$i</option>\n";
 					}
 				?>
