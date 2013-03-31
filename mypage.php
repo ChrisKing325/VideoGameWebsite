@@ -123,7 +123,7 @@
 						$game = $row3['gamename'];
 						
 						echo '<h1><a href="showGame.php?id=' . $gid . '"> ' . $game . ':</a></h1>' . $row['timeReviewed'];
-						echo '<br/> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . '<br/>;
+						echo '<br/> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . '<br/>';
 						echo "<br/>";
 						echo "<br/>";
 						echo '<span class="dontbeallthewayontheright">' . $review . "</span><br/><br/>";
