@@ -72,7 +72,7 @@
 					$game = $row['gamename'];
 					$id = $row['id'];
 					$system = $row['system'];
-					echo '<br/><a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>' . '&nbsp: &nbsp' . $system;
+					echo '<br/><br/> &nbsp&nbsp&nbsp&nbsp<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a>' . '&nbsp: &nbsp' . $system;
 				}
 			}
 			echo '</div>';
@@ -80,7 +80,8 @@
 		
 	?>
 		<div>
-			Don't see the game you're looking for? 
+			<br/><br/><hr>
+			&nbsp&nbsp&nbsp Don't see the game you're looking for? 
 			<a href="addGame.php">Create a page for it!</a>
 		</div>
 			

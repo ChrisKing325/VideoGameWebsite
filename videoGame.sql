@@ -3,7 +3,7 @@ GRANT ALL PRIVILEGES ON gamereviews.* to 'videogameuser'@'localhost' identified 
 USE gamereviews;
 
 CREATE TABLE videogames (
-  id int NOT NULL auto_increment,
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   gamename VARCHAR(255),
   ESRBrating VARCHAR(20),
   genre VARCHAR(15),
@@ -12,7 +12,7 @@ CREATE TABLE videogames (
   replayability VARCHAR(25),
   AdminReview blob,
   picturelink VARCHAR(255),
-  PRIMARY KEY (id)
+  INDEX (gamename)
 );
 
 CREATE TABLE systems (
@@ -21,25 +21,23 @@ CREATE TABLE systems (
 );
 
 CREATE TABLE reviews (
-	id int NOT NULL auto_increment,
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	gameID int NOT NULL,
 	userID int NOT NULL,
 	userReview blob NOT NULL,
 	timeReviewed TIMESTAMP NOT NULL,
 	rating int NOT NULL,
-	replayability int NOT NULL,
-	PRIMARY KEY(id)
+	replayability int NOT NULL
 );
 
 CREATE TABLE users (
-	id int NOT NULL auto_increment,
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userName VARCHAR(25) NOT NULL,
 	password VARCHAR(40) NOT NULL,
 	name VARCHAR(255) NOT NULL,
 	favConsole VARCHAR(255) NOT NULL,
 	aboutMe blob,
-	piclink VARCHAR(255),
-	PRIMARY KEY (id)
+	piclink VARCHAR(255)
 );
 	
 	

@@ -106,7 +106,7 @@
 					$query = $query . "systems.system = '$system'";
 				}
 				$query = $query . ";";
-				echo $query;
+				//echo $query;
 				$result = mysqli_query($db, $query)
 					or die("Error Querying Database");
 				echo '<div class="gamelist" id="gamelist">';
@@ -114,14 +114,15 @@
 				while($row = mysqli_fetch_array($result)) {
 					$game = $row['gamename'];
 					$id = $row['id'];
-					echo '<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a><br/>';
+					echo '<br/>&nbsp&nbsp&nbsp&nbsp<a href="showGame.php?id=' . $id . '"> - ' . $game . '</a><br/>';
 				}
 				echo '</div>';
 		
 		
 			?>
 			<div>
-				Don't see the game you're looking for? 
+				<br/><br/><hr>
+				&nbsp&nbsp&nbsp Don't see the game you're looking for? 
 				<a href="addGame.php">Create a page for it!</a>
 			</div>
 		</p>
