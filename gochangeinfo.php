@@ -70,22 +70,39 @@
     	<div class="titleBlock">Update my Info</div>        
 			<p>        	
 				<?php
-					if($_POST['name'] != "" && $_POST['system'] != "sys" && $_POST['aboutme'] != "" && $_POST['piclink'] != "" && isset($id)){
-						$name = $_POST['name'];
+					if($_POST['system'] != "sys" && isset($id)){
 						$console = $_POST['system'];
-						$aboutme = mysqli_real_escape_string($db, $_POST['aboutme']);
-						$piclink = mysqli_real_escape_string($db, $_POST['piclink']);
-						$query = "UPDATE gamereviews.users SET name='$name', favConsole='$console', aboutMe='$aboutme', piclink='$piclink' WHERE id='$id';";
+						$query = "UPDATE gamereviews.users SET favConsole='$console' WHERE id='$id';";
 						mysqli_query($db, $query)
-							or die("Error Querying Database");
-						echo "Your information has been changed!";
+						or die("Error Querying Database");
+						echo "<br/>You changed your favorite system!";
+						}
+					if($_POST['name'] != "" && isset($id)) {
+						$name = $_POST['name'];
+						$query = "UPDATE gamereviews.users SET name='$name' WHERE id='$id';";
+						mysqli_query($db, $query)
+						or die("Error Querying Database");
+						echo "<br/>You changed your name!";
+						}
+					if($_POST['aboutme'] != "" && isset($id)) {
+						$aboutme = mysqli_real_escape_string($db, $_POST['aboutme']);
+						$query = "UPDATE gamereviews.users SET aboutMe='$aboutme' WHERE id='$id';";
+						mysqli_query($db, $query)
+						or die("Error Querying Database");
+						echo "<br/>You changed your about me!";
+						}
+					if($_POST['piclink'] != "" && isset($id)) {
+						$piclink = mysqli_real_escape_string($db, $_POST['piclink']);
+						$query = "UPDATE gamereviews.users SET piclink='$piclink' WHERE id='$id';";
+						mysqli_query($db, $query)
+						or die("Error Querying Database");
+						echo "<br/>You changed your profile picture!";
 					} else {
 						if(isset($id)){
-							echo "Please fill out all fields.";
 						} else {
 							echo "Please log in first.";
+							}
 						}
-					}
 					
 				?>
 			</p>    
