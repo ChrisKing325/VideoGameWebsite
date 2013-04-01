@@ -1,8 +1,8 @@
-<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
+<?php session_start(); ?>
 	<title>
 	<?php
 	include "dbconnect.php";
@@ -112,8 +112,8 @@
 					or die("Error Querying username");
 				$row2 = mysqli_fetch_array($result2);
 				echo '<h1><a href="myPage.php?id=' . $uid . '">' . $row2['userName'] . '</a><font size="2" color = "black">' . $row['timeReviewed'] . '</font></h1>';
-				echo '<p> <b> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . ' </b> <br/> </p>';
-				echo "<h3>" . $review . " </h3></br>";
+				echo '<p> Scored: ' . $row['rating'] . '<br/> Replayability: ' . $row['replayability'] . ' <br/> </p>';
+				echo "<p>" . $review . " </p></br>";
 				echo "<hr>";
 				echo "<br/>";
 			}
