@@ -41,8 +41,8 @@
 					}
 				?>
                 <li><a href="aboutus.php">About Us</a></li>
-                <li id="active"><a href="reviewlink.php" id="current">Reviews</a></li>
-                <li><a href="memberlist.php">Member List</a></li>
+                <li><a href="reviewlink.php">Reviews</a></li>
+                <li id="active"><a href="memberlist.php" id="current">Member List</a></li>
 				<li><a href="search.php">Search</a></li>
             </ul>
         </div>
