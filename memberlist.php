@@ -52,17 +52,18 @@
     <div class="headerPic"><h2></h2></div>
 	<div class="sidebar3">
     	<div class="titleBlock">Check out the other members!</div>
-			<h1>Make friends, make enemies, we don't care just have fun!</h1>
+			<h1>Make friends, make enemies. We don't care just have fun!</h1>
 			<p>
 				<?php
 					include "dbconnect.php";
-					$query = 'SELECT * FROM users ORDER BY userName ASC';
+					$query = 'SELECT u1.userName, u2.name, u2.id FROM users u1 INNER JOIN users u2 ON u1.id = u2.id ORDER BY u1.userName ASC';
 					$result = mysqli_query($db, $query)
 						or die("Error Querying Database");
 					while($row = mysqli_fetch_array($result)) {
 						$user = $row['userName'];
 						$id = $row['id'];
-						echo '<a href="mypage.php?id=' . $id . '">- ' . $user . '</a><br/>';
+						$name = $row['name'];
+						echo 'Username:<a href="mypage.php?id=' . $id . '">&nbsp' . $user . '</a> &nbsp Name: ' . $name . '</a><br/>';
 					}
 				?>
 			</p>
