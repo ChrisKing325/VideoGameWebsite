@@ -60,8 +60,8 @@
 		include "dbconnect.php";
 		if(isset($_GET['searchterm'])){
 			$searchTerm = mysqli_real_escape_string($db, $_GET['searchterm']);
-			//$query = "SELECT * FROM videogames INNER JOIN systems ON videogames.id = systems.id WHERE gamename LIKE '%$searchTerm%'";
-			$query = "SELECT * FROM videogames WHERE videogames.id IN (SELECT systems.id FROM systems WHERE videogames.gamename LIKE '%$searchTerm%')";
+			$query = "SELECT * FROM videogames INNER JOIN systems ON videogames.id = systems.id WHERE gamename LIKE '%$searchTerm%'";
+			//$query = "SELECT * FROM videogames WHERE videogames.id IN (SELECT systems.id FROM systems WHERE videogames.gamename LIKE '%$searchTerm%')";
 			$result = mysqli_query($db, $query)
 				or die("Error Querying Database");
 			echo '<div id="gamelist">';
