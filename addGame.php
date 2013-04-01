@@ -1,8 +1,8 @@
+<?php session_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-	<?php session_start(); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
     type="text/javascript"></script>
 	<script src="createGame.js"></script>
