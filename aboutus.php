@@ -98,8 +98,10 @@
 		&nbsp;&nbsp;Brendan Prinn</br>
         </h1>
 		
-		<p>
-		 <a href="aboutusMore.php">About Us continued...</a>
+	
+		 &nbsp&nbsp&nbsp&nbsp<a href="aboutusMore.php">About Us continued...</a>
+		 <br/>
+		 <br/>
 		
     </div>
     <br class="clearfloat" />
