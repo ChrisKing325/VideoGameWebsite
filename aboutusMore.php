@@ -83,9 +83,9 @@
         <h1>Continued...</h1>
 		
 		
-        <p>
-		We are all Computer Science Majors currently in CPSC 350 Databases and are devoted to ensure that users on the web can access fun sites, such as our Video Game Website, for great feedback and knowledge of other user's insight. Enjoy!
-		</p>
+        &nbsp&nbsp&nbsp&nbsp&nbsp We are all Computer Science Majors currently in CPSC 350 Databases and are devoted to ensure that users on the web can access fun sites, such as our Video Game Website, for great feedback and knowledge of other user's insight. Enjoy!
+		<br/>
+		<br/>
 		
     </div>
     <br class="clearfloat" />

@@ -99,7 +99,7 @@
         </h1>
 		
 		<p>
-		 <a href="aboutusMore.php">More About Us</a>
+		 <a href="aboutusMore.php">About Us continued...</a>
 		
     </div>
     <br class="clearfloat" />
