@@ -77,6 +77,16 @@
 			echo '<div id="gamelist">';
 			echo '<a href="' . $picture . '"><img src = "' . $picture . '" width=200px/></a>';
 			echo '<div class="dontbeallthewayontheright">';
+			if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+					
+					echo "<form method='post' action='updatedpic.php'> Update game picture: <input type='text' id='picturelink' name='picturelink' size='25' value='" . $row['picturelink'] . "'/><br/>
+					<input type='submit' value='Update game picture' class='dontbeallthewayontheright' />
+					
+					</form>";
+					
+			}else{
+			}
+			echo "<br/>";
 			echo "ESRB rating: $rating <br/>";
 			echo "Genre: $genre <br/>";
 			echo "Release date: $date <br/>";
