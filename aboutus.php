@@ -92,10 +92,10 @@
 		
         <h1>
         &nbsp;&nbsp;Austin Wegner<font color=black >&nbsp;-&nbsp;Scrum Master</font></br>
-		&nbsp;&nbsp;Elizabeth Ashley</br>
+		&nbsp;&nbsp;Elisabeth Ashley</br>
 		&nbsp;&nbsp;James Deflora</br>
 		&nbsp;&nbsp;Chris King<font color=black >&nbsp;-&nbsp;Project Owner</font></br>
-		&nbsp;&nbsp;Brendan Prinn</br>
+		&nbsp;&nbsp;Brendan Prin</br>
         </h1>
 		
 	
